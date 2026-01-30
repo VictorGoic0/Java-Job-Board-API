@@ -124,50 +124,50 @@
 
 ### Tasks
 
-- [ ] 1. Create Job-related enums
-  - [ ] Create `model/entity/JobType.java` enum (FULL_TIME, PART_TIME, CONTRACT, INTERNSHIP)
-  - [ ] Create `model/entity/ExperienceLevel.java` enum (ENTRY, MID, SENIOR)
-  - [ ] Create `model/entity/RemoteOption.java` enum (REMOTE, HYBRID, ONSITE)
+- [x] 1. Create Job-related enums
+  - [x] Create `model/entity/JobType.java` enum (FULL_TIME, PART_TIME, CONTRACT, INTERNSHIP)
+  - [x] Create `model/entity/ExperienceLevel.java` enum (ENTRY, MID, SENIOR)
+  - [x] Create `model/entity/RemoteOption.java` enum (REMOTE, HYBRID, ONSITE)
 
-- [ ] 2. Create Job entity class
-  - [ ] Create `model/entity/Job.java`
-  - [ ] Add `@Entity` and `@Table(name = "job")` annotations
-  - [ ] Add id field with `@Id` and `@GeneratedValue`
-  - [ ] Add title field with `@NotBlank` and `@Column(nullable = false)`
-  - [ ] Add description field with `@NotBlank` and `@Column(columnDefinition = "TEXT")`
-  - [ ] Add company relationship with `@ManyToOne(fetch = LAZY)` and `@JoinColumn(name = "company_id")`
-  - [ ] Add location field with `@NotBlank`
-  - [ ] Add salaryMin field with `@DecimalMin("0.0")` and `@Column(precision = 10, scale = 2)`
-  - [ ] Add salaryMax field with `@DecimalMin("0.0")` and `@Column(precision = 10, scale = 2)`
-  - [ ] Add jobType field with `@NotNull` and `@Enumerated(STRING)`
-  - [ ] Add experienceLevel field with `@NotNull` and `@Enumerated(STRING)`
-  - [ ] Add remoteOption field with `@NotNull` and `@Enumerated(STRING)`
-  - [ ] Add postedDate field with `@Column(nullable = false)`
-  - [ ] Add expiryDate field with `@Future` validation
-  - [ ] Add isActive field with default value `true`
-  - [ ] Add applicationUrl field with `@Pattern` validation for URL
-  - [ ] Add createdAt, updatedAt with JPA auditing annotations
-  - [ ] Add version field with `@Version`
-  - [ ] Add `@PrePersist` method to set postedDate to now
+- [x] 2. Create Job entity class
+  - [x] Create `model/entity/Job.java`
+  - [x] Add `@Entity` and `@Table(name = "job")` annotations
+  - [x] Add id field with `@Id` and `@GeneratedValue`
+  - [x] Add title field with `@NotBlank` and `@Column(nullable = false)`
+  - [x] Add description field with `@NotBlank` and `@Column(columnDefinition = "TEXT")`
+  - [x] Add company relationship with `@ManyToOne(fetch = LAZY)` and `@JoinColumn(name = "company_id")`
+  - [x] Add location field with `@NotBlank`
+  - [x] Add salaryMin field with `@DecimalMin("0.0")` and `@Column(precision = 10, scale = 2)`
+  - [x] Add salaryMax field with `@DecimalMin("0.0")` and `@Column(precision = 10, scale = 2)`
+  - [x] Add jobType field with `@NotNull` and `@Enumerated(STRING)`
+  - [x] Add experienceLevel field with `@NotNull` and `@Enumerated(STRING)`
+  - [x] Add remoteOption field with `@NotNull` and `@Enumerated(STRING)`
+  - [x] Add postedDate field with `@Column(nullable = false)`
+  - [x] Add expiryDate field with `@Future` validation
+  - [x] Add isActive field with default value `true`
+  - [x] Add applicationUrl field with `@Pattern` validation for URL
+  - [x] Add createdAt, updatedAt with JPA auditing annotations
+  - [x] Add version field with `@Version`
+  - [x] Add `@PrePersist` method to set postedDate to now
 
-- [ ] 3. Add indexes to Job entity
-  - [ ] Add `@Table` annotation with indexes array
-  - [ ] Create index on company_id
-  - [ ] Create index on is_active
-  - [ ] Create index on posted_date
+- [x] 3. Add indexes to Job entity
+  - [x] Add `@Table` annotation with indexes array
+  - [x] Create index on company_id
+  - [x] Create index on is_active
+  - [x] Create index on posted_date
 
-- [ ] 4. Create JobRepository interface
-  - [ ] Create `repository/JobRepository.java`
-  - [ ] Extend `JpaRepository<Job, Long>`
-  - [ ] Add method: `List<Job> findByCompanyId(Long companyId)`
+- [x] 4. Create JobRepository interface
+  - [x] Create `repository/JobRepository.java`
+  - [x] Extend `JpaRepository<Job, Long>`
+  - [x] Add method: `List<Job> findByCompanyId(Long companyId)`
 
-- [ ] 5. Test database schema generation
-  - [ ] Start application
-  - [ ] Verify `job` table exists with all columns
-  - [ ] Verify foreign key constraint to company table
-  - [ ] Verify ON DELETE CASCADE is configured
-  - [ ] Verify all indexes created
-  - [ ] Verify enum columns are VARCHAR type
+- [x] 5. Test database schema generation
+  - [x] Start application
+  - [x] Verify `job` table exists with all columns
+  - [x] Verify foreign key constraint to company table
+  - [x] Verify ON DELETE CASCADE is configured
+  - [x] Verify all indexes created
+  - [x] Verify enum columns are VARCHAR type
 
 **Acceptance Criteria**:
 - All three enums created

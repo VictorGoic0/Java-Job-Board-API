@@ -2,17 +2,17 @@
 
 ## Current Focus
 
-PR #1 (Project Setup & Configuration) complete. Starting PR #2: Company Entity & Repository.
+PR #2 (Company Entity & Repository) and PR #3 (Job Entity & Repository with Enums) complete. Starting PR #4: DTOs for Company.
 
 ## Recent Changes
 
-- PR #1 completed: Spring Boot project initialized (Java 17, Maven, Spring Boot 3.x, YAML), package structure under `com.jobboard`, Docker Compose for PostgreSQL 15, application.yaml (datasource, JPA, Jackson, server port, logging), .gitignore updated, app starts and connects to DB.
-- Rule added: update Memory Bank when a PR is fully complete; update systemPatterns when significant system-pattern changes land in code.
+- PR #3 completed: Job-related enums (JobType, ExperienceLevel, RemoteOption), Job entity with all fields and indexes, JobRepository; schema verified (company and job tables created, FK, indexes, enum columns).
+- PR #2 completed: Company entity, JpaConfig (@EnableJpaAuditing), CompanyRepository (Task 5 removed from PR #2; schema verification done after PR #3).
 
 ## Next Steps
 
-- PR #2: Company entity, JpaConfig (@EnableJpaAuditing), CompanyRepository, verify company table generation.
-- Then PR #3 (Job entity & enums), PR #4–5 (DTOs), PR #6–8 (exceptions & handler), PR #9–12 (services & controllers).
+- PR #4: Company DTOs (CompanySummaryDTO, CompanyDTO, CompanyCreateDTO, CompanyUpdateDTO), CompanyMapper.
+- Then PR #5 (Job DTOs & salary validator), PR #6–8 (exceptions & handler), PR #9–12 (services & controllers).
 
 ## Active Decisions
 
