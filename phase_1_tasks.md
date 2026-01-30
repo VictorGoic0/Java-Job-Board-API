@@ -12,15 +12,15 @@
 
 ### Tasks
 
-- [ ] 1. Initialize Spring Boot project using Spring Initializr
-  - [ ] Select Java 17
-  - [ ] Select Maven as build tool
-  - [ ] Select Spring Boot 3.2.x (latest stable)
-  - [ ] Add dependencies: Spring Web, Spring Data JPA, PostgreSQL Driver, Validation, Lombok
-  - [ ] Set Group: `com.jobboard`
-  - [ ] Set Artifact: `job-board-api`
+- [x] 1. Initialize Spring Boot project using Spring Initializr
+  - [x] Select Java 17
+  - [x] Select Maven as build tool
+  - [x] Select Spring Boot 3.2.x (latest stable)
+  - [x] Add dependencies: Spring Web, Spring Data JPA, PostgreSQL Driver, Validation, Lombok
+  - [x] Set Group: `com.jobboard`
+  - [x] Set Artifact: `job-board-api`
 
-- [ ] 2. Create project structure
+- [x] 2. Create project structure
   ```
   src/main/java/com/jobboard/
     ├── JobBoardApiApplication.java
@@ -35,39 +35,39 @@
     └── util/
   ```
 
-- [ ] 3. Set up Docker Compose for PostgreSQL
-  - [ ] Create `docker-compose.yml` in project root
-  - [ ] Configure PostgreSQL service (image: postgres:15-alpine)
-  - [ ] Set environment variables (POSTGRES_DB, POSTGRES_USER, POSTGRES_PASSWORD)
-  - [ ] Configure port mapping (5432:5432)
-  - [ ] Add volume for data persistence
-  - [ ] Test: Run `docker-compose up -d` and verify PostgreSQL is running
+- [x] 3. Set up Docker Compose for PostgreSQL
+  - [x] Create `docker-compose.yml` in project root
+  - [x] Configure PostgreSQL service (image: postgres:15-alpine)
+  - [x] Set environment variables (POSTGRES_DB, POSTGRES_USER, POSTGRES_PASSWORD)
+  - [x] Configure port mapping (5432:5432)
+  - [x] Add volume for data persistence
+  - [x] Test: Run `docker-compose up -d` and verify PostgreSQL is running
 
-- [ ] 4. Configure application properties
-  - [ ] Create `src/main/resources/application.yml`
-  - [ ] Add datasource configuration (URL, username, password, driver)
-  - [ ] Add JPA/Hibernate configuration (ddl-auto, show-sql, format-sql, dialect)
-  - [ ] Add Jackson date serialization config
-  - [ ] Add server port configuration (8080)
-  - [ ] Add logging configuration for SQL and Hibernate
+- [x] 4. Configure application properties
+  - [x] Create `src/main/resources/application.yml`
+  - [x] Add datasource configuration (URL, username, password, driver)
+  - [x] Add JPA/Hibernate configuration (ddl-auto, show-sql, format-sql, dialect)
+  - [x] Add Jackson date serialization config
+  - [x] Add server port configuration (8080)
+  - [x] Add logging configuration for SQL and Hibernate
 
-- [ ] 5. Verify application starts successfully
-  - [ ] Start PostgreSQL: `docker-compose up -d`
-  - [ ] Run Spring Boot application
-  - [ ] Check logs for successful database connection
-  - [ ] Verify no errors on startup
+- [x] 5. Verify application starts successfully
+  - [x] Start PostgreSQL: `docker-compose up -d`
+  - [x] Run Spring Boot application
+  - [x] Check logs for successful database connection
+  - [x] Verify no errors on startup
 
-- [ ] 6. Create `.gitignore` file
-  - [ ] Add Maven build directories (target/)
-  - [ ] Add IDE files (.idea/, *.iml, .vscode/)
-  - [ ] Add OS files (.DS_Store, Thumbs.db)
-  - [ ] Add environment files (*.env)
-  - [ ] Add log files (*.log)
+- [x] 6. Create `.gitignore` file
+  - [x] Add Maven build directories (target/)
+  - [x] Add IDE files (.idea/, *.iml, .vscode/)
+  - [x] Add OS files (.DS_Store, Thumbs.db)
+  - [x] Add environment files (*.env)
+  - [x] Add log files (*.log)
 
-- [ ] 7. Initialize Git repository
-  - [ ] Run `git init`
-  - [ ] Add all files: `git add .`
-  - [ ] Initial commit: `git commit -m "feat: Initial project setup with Spring Boot and PostgreSQL"`
+- [x] 7. Initialize Git repository
+  - [x] Run `git init`
+  - [x] Add all files: `git add .`
+  - [x] Initial commit: `git commit -m "feat: Initial project setup with Spring Boot and PostgreSQL"`
 
 **Acceptance Criteria**:
 - PostgreSQL container starts successfully
