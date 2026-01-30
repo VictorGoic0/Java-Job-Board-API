@@ -2,17 +2,17 @@
 
 ## Current Focus
 
-Initiating project; Memory Bank established. No application code exists yet—only PRD and phase task files.
+PR #1 (Project Setup & Configuration) complete. Starting PR #2: Company Entity & Repository.
 
 ## Recent Changes
 
-- Memory Bank created: projectbrief, productContext, systemPatterns, techContext, activeContext, progress.
-- Tech stack and version numbers documented; project overview captured (job board platform API, Spring Boot, Java).
+- PR #1 completed: Spring Boot project initialized (Java 17, Maven, Spring Boot 3.x, YAML), package structure under `com.jobboard`, Docker Compose for PostgreSQL 15, application.yaml (datasource, JPA, Jackson, server port, logging), .gitignore updated, app starts and connects to DB.
+- Rule added: update Memory Bank when a PR is fully complete; update systemPatterns when significant system-pattern changes land in code.
 
 ## Next Steps
 
-- Phase I: Initialize Spring Boot (Maven), add dependencies, Docker Compose for PostgreSQL, configure `application.yml`, implement entities (Company, Job), enums, repositories, services, controllers, DTOs, validation, global exception handler, optimistic locking.
-- Proceed phase by phase; do not skip ahead (per PRD).
+- PR #2: Company entity, JpaConfig (@EnableJpaAuditing), CompanyRepository, verify company table generation.
+- Then PR #3 (Job entity & enums), PR #4–5 (DTOs), PR #6–8 (exceptions & handler), PR #9–12 (services & controllers).
 
 ## Active Decisions
 

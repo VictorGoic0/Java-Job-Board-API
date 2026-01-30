@@ -2,20 +2,20 @@
 
 ## What Works
 
-- Documentation only: PRD.md and phase task files (phase_1 through phase_4_part_2). Memory Bank initialized.
-- No runnable application or tests yet.
+- **PR #1 complete**: Spring Boot project (Java 17, Maven, Spring Boot 3.x); package structure `com.jobboard` (config, controller, service, repository, model/entity, model/dto, exception, util); Docker Compose for PostgreSQL 15; application.yaml (datasource, JPA, Jackson, server 8080, logging); .gitignore; app starts and connects to database.
+- PRD and phase task files; Memory Bank; Cursor rule for PR completion and message sign-off.
 
 ## What's Left to Build
 
-- **Phase I**: Project setup, Docker Compose (PostgreSQL), entities, repositories, services, controllers, DTOs, validation, exception handling, optimistic locking—full CRUD for Companies and Jobs.
-- **Phase II**: Search/filter, pagination, active jobs endpoint, deactivate (soft delete).
-- **Phase III**: Unit tests (services), repository tests (H2), controller tests (MockMvc).
-- **Phase IV**: Security (JWT, roles), User entity, file upload (resumes), Application entity and endpoints, scheduled job expiration.
+- **Phase I (remaining)**: PR #2 Company entity & repo → PR #3 Job entity & repo → PR #4–5 DTOs & mappers → PR #6–8 exceptions & global handler → PR #9–10 Company/Job services → PR #11–12 Company/Job controllers → full CRUD, validation, optimistic locking.
+- **Phase II**: Search/filter, pagination, active jobs, deactivate.
+- **Phase III**: Unit, repository, controller tests.
+- **Phase IV**: Security (JWT), User, file upload, Application entity, scheduled expiration.
 
 ## Current Status
 
-Pre–Phase I. Ready to create Spring Boot project and implement Phase I per PRD and phase_1_tasks.md.
+Phase I, PR #1 done. Ready for PR #2 (Company Entity & Repository).
 
 ## Known Issues
 
-None. No codebase yet.
+None.
