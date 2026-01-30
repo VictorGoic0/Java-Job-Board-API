@@ -83,39 +83,32 @@
 
 ### Tasks
 
-- [ ] 1. Create Company entity enums (if needed)
-  - [ ] None required for Company in Phase I
+- [x] 1. Create Company entity enums (if needed)
+  - [x] None required for Company in Phase I
 
-- [ ] 2. Create Company entity class
-  - [ ] Create `model/entity/Company.java`
-  - [ ] Add `@Entity` and `@Table(name = "company")` annotations
-  - [ ] Add id field with `@Id` and `@GeneratedValue(strategy = IDENTITY)`
-  - [ ] Add name field with `@NotBlank` and `@Column(nullable = false)`
-  - [ ] Add description field with `@Column(columnDefinition = "TEXT")`
-  - [ ] Add website field with `@Pattern` validation for URL format
-  - [ ] Add location field with `@NotBlank`
-  - [ ] Add jobs relationship with `@OneToMany(mappedBy = "company", cascade = ALL, orphanRemoval = true)`
-  - [ ] Add createdAt field with `@CreatedDate` and `@Column(updatable = false)`
-  - [ ] Add updatedAt field with `@LastModifiedDate`
-  - [ ] Add version field with `@Version` for optimistic locking
-  - [ ] Generate getters, setters, constructors using Lombok `@Data`
+- [x] 2. Create Company entity class
+  - [x] Create `model/entity/Company.java`
+  - [x] Add `@Entity` and `@Table(name = "company")` annotations
+  - [x] Add id field with `@Id` and `@GeneratedValue(strategy = IDENTITY)`
+  - [x] Add name field with `@NotBlank` and `@Column(nullable = false)`
+  - [x] Add description field with `@Column(columnDefinition = "TEXT")`
+  - [x] Add website field with `@Pattern` validation for URL format
+  - [x] Add location field with `@NotBlank`
+  - [x] Add jobs relationship with `@OneToMany(mappedBy = "company", cascade = ALL, orphanRemoval = true)`
+  - [x] Add createdAt field with `@CreatedDate` and `@Column(updatable = false)`
+  - [x] Add updatedAt field with `@LastModifiedDate`
+  - [x] Add version field with `@Version` for optimistic locking
+  - [x] Generate getters, setters, constructors using Lombok `@Data`
 
-- [ ] 3. Enable JPA Auditing for timestamps
-  - [ ] Create `config/JpaConfig.java`
-  - [ ] Add `@Configuration` annotation
-  - [ ] Add `@EnableJpaAuditing` annotation
+- [x] 3. Enable JPA Auditing for timestamps
+  - [x] Create `config/JpaConfig.java`
+  - [x] Add `@Configuration` annotation
+  - [x] Add `@EnableJpaAuditing` annotation
 
-- [ ] 4. Create CompanyRepository interface
-  - [ ] Create `repository/CompanyRepository.java`
-  - [ ] Extend `JpaRepository<Company, Long>`
-  - [ ] Add method: `Optional<Company> findByName(String name)`
-
-- [ ] 5. Test database schema generation
-  - [ ] Start application
-  - [ ] Connect to PostgreSQL using pgAdmin or psql
-  - [ ] Verify `company` table exists with correct columns
-  - [ ] Verify indexes are created
-  - [ ] Verify version column exists for optimistic locking
+- [x] 4. Create CompanyRepository interface
+  - [x] Create `repository/CompanyRepository.java`
+  - [x] Extend `JpaRepository<Company, Long>`
+  - [x] Add method: `Optional<Company> findByName(String name)`
 
 **Acceptance Criteria**:
 - Company entity created with all required fields
