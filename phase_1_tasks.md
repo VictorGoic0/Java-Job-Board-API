@@ -252,52 +252,52 @@
 
 ### Tasks
 
-- [ ] 1. Create JobDTO (for list responses)
+- [x] 1. Create JobDTO (for list responses)
 
-  - [ ] Create `model/dto/JobDTO.java`
-  - [ ] Add fields: id, title, location, salaryMin, salaryMax, jobType, experienceLevel, remoteOption, postedDate, isActive
-  - [ ] Add field: CompanySummaryDTO company (embedded company info)
-  - [ ] Use Lombok `@Data`
-  - [ ] Add constructors
+  - [x] Create `model/dto/JobDTO.java`
+  - [x] Add fields: id, title, location, salaryMin, salaryMax, jobType, experienceLevel, remoteOption, postedDate, isActive
+  - [x] Add field: CompanySummaryDTO company (embedded company info)
+  - [x] Use Lombok `@Data`
+  - [x] Add constructors
 
-- [ ] 2. Create JobDetailDTO (for single job responses)
+- [x] 2. Create JobDetailDTO (for single job responses)
 
-  - [ ] Create `model/dto/JobDetailDTO.java`
-  - [ ] Extend JobDTO or include all JobDTO fields
-  - [ ] Add additional fields: description, expiryDate, applicationUrl, createdAt, updatedAt
-  - [ ] Use Lombok `@Data`
+  - [x] Create `model/dto/JobDetailDTO.java`
+  - [x] Extend JobDTO or include all JobDTO fields
+  - [x] Add additional fields: description, expiryDate, applicationUrl, createdAt, updatedAt
+  - [x] Use Lombok `@Data`
 
-- [ ] 3. Create JobCreateDTO (for POST requests)
+- [x] 3. Create JobCreateDTO (for POST requests)
 
-  - [ ] Create `model/dto/JobCreateDTO.java`
-  - [ ] Add fields: title, description, companyId, location, salaryMin, salaryMax, jobType, experienceLevel, remoteOption, expiryDate, applicationUrl
-  - [ ] Add validation annotations matching entity
-  - [ ] Use `@NotBlank`, `@NotNull`, `@DecimalMin`, `@Future`, `@Pattern` as appropriate
-  - [ ] Use Lombok `@Data`
+  - [x] Create `model/dto/JobCreateDTO.java`
+  - [x] Add fields: title, description, companyId, location, salaryMin, salaryMax, jobType, experienceLevel, remoteOption, expiryDate, applicationUrl
+  - [x] Add validation annotations matching entity
+  - [x] Use `@NotBlank`, `@NotNull`, `@DecimalMin`, `@Future`, `@Pattern` as appropriate
+  - [x] Use Lombok `@Data`
 
-- [ ] 4. Create JobUpdateDTO (for PATCH requests)
+- [x] 4. Create JobUpdateDTO (for PATCH requests)
 
-  - [ ] Create `model/dto/JobUpdateDTO.java`
-  - [ ] Add optional fields matching JobCreateDTO
-  - [ ] All fields nullable for partial updates
-  - [ ] Add validation annotations (only validate if present)
-  - [ ] Use Lombok `@Data`
+  - [x] Create `model/dto/JobUpdateDTO.java`
+  - [x] Add optional fields matching JobCreateDTO
+  - [x] All fields nullable for partial updates
+  - [x] Add validation annotations (only validate if present)
+  - [x] Use Lombok `@Data`
 
-- [ ] 5. Create custom validator for salary range
+- [x] 5. Create custom validator for salary range
 
-  - [ ] Create `validation/ValidSalaryRange.java` annotation
-  - [ ] Create `validation/SalaryRangeValidator.java` class
-  - [ ] Implement logic: salaryMax >= salaryMin if both present
-  - [ ] Apply annotation to JobCreateDTO and JobUpdateDTO
+  - [x] Create `validation/ValidSalaryRange.java` annotation
+  - [x] Create `validation/SalaryRangeValidator.java` class
+  - [x] Implement logic: salaryMax >= salaryMin if both present
+  - [x] Apply annotation to JobCreateDTO and JobUpdateDTO
 
-- [ ] 6. Create DTO mapper utility for Job
-  - [ ] Create `util/JobMapper.java` class
-  - [ ] Add method: `JobDTO toDTO(Job entity)`
-  - [ ] Add method: `JobDetailDTO toDetailDTO(Job entity)`
-  - [ ] Add method: `Job toEntity(JobCreateDTO dto, Company company)`
-  - [ ] Add method: `void updateEntityFromDTO(Job entity, JobUpdateDTO dto, Company company)`
-  - [ ] Include CompanyMapper for embedded company data
-  - [ ] Handle null checks and optional fields
+- [x] 6. Create DTO mapper utility for Job
+  - [x] Create `util/JobMapper.java` class
+  - [x] Add method: `JobDTO toDTO(Job entity)`
+  - [x] Add method: `JobDetailDTO toDetailDTO(Job entity)`
+  - [x] Add method: `Job toEntity(JobCreateDTO dto, Company company)`
+  - [x] Add method: `void updateEntityFromDTO(Job entity, JobUpdateDTO dto, Company company)`
+  - [x] Include CompanyMapper for embedded company data
+  - [x] Handle null checks and optional fields
 
 **Acceptance Criteria**:
 
