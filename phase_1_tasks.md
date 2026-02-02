@@ -510,64 +510,64 @@
 
 ### Tasks
 
-- [ ] 1. Create JobService class
+- [x] 1. Create JobService class
 
-  - [ ] Create `service/JobService.java`
-  - [ ] Add `@Service` annotation
-  - [ ] Add `@Transactional` annotation at class level
-  - [ ] Inject JobRepository via constructor
-  - [ ] Inject CompanyRepository via constructor
-  - [ ] Inject JobMapper via field or constructor
+  - [x] Create `service/JobService.java`
+  - [x] Add `@Service` annotation
+  - [x] Add `@Transactional` annotation at class level
+  - [x] Inject JobRepository via constructor
+  - [x] Inject CompanyRepository via constructor
+  - [x] Inject JobMapper via field or constructor
 
-- [ ] 2. Implement getAllJobs method
+- [x] 2. Implement getAllJobs method
 
-  - [ ] Add `@Transactional(readOnly = true)` annotation
-  - [ ] Method signature: `List<JobDTO> getAllJobs()`
-  - [ ] Use JPQL query with JOIN FETCH to load company data (avoid N+1)
-  - [ ] Or use repository.findAll() and mapper will fetch company
-  - [ ] Convert entities to DTOs using mapper
-  - [ ] Return list of JobDTOs with embedded company data
+  - [x] Add `@Transactional(readOnly = true)` annotation
+  - [x] Method signature: `List<JobDTO> getAllJobs()`
+  - [x] Use JPQL query with JOIN FETCH to load company data (avoid N+1)
+  - [x] Or use repository.findAll() and mapper will fetch company
+  - [x] Convert entities to DTOs using mapper
+  - [x] Return list of JobDTOs with embedded company data
 
-- [ ] 3. Implement getJobById method
+- [x] 3. Implement getJobById method
 
-  - [ ] Add `@Transactional(readOnly = true)` annotation
-  - [ ] Method signature: `JobDetailDTO getJobById(Long id)`
-  - [ ] Fetch job by id using repository.findById()
-  - [ ] Throw JobNotFoundException if not found
-  - [ ] Convert entity to JobDetailDTO (includes all fields)
-  - [ ] Return JobDetailDTO
+  - [x] Add `@Transactional(readOnly = true)` annotation
+  - [x] Method signature: `JobDetailDTO getJobById(Long id)`
+  - [x] Fetch job by id using repository.findById()
+  - [x] Throw JobNotFoundException if not found
+  - [x] Convert entity to JobDetailDTO (includes all fields)
+  - [x] Return JobDetailDTO
 
-- [ ] 4. Implement createJob method
+- [x] 4. Implement createJob method
 
-  - [ ] Method signature: `JobDTO createJob(JobCreateDTO dto)`
-  - [ ] Validate company exists: fetch by companyId
-  - [ ] Throw CompanyNotFoundException if company not found
-  - [ ] Convert DTO to entity using mapper (pass company object)
-  - [ ] Save entity using repository
-  - [ ] Convert saved entity back to DTO
-  - [ ] Return JobDTO
+  - [x] Method signature: `JobDTO createJob(JobCreateDTO dto)`
+  - [x] Validate company exists: fetch by companyId
+  - [x] Throw CompanyNotFoundException if company not found
+  - [x] Convert DTO to entity using mapper (pass company object)
+  - [x] Save entity using repository
+  - [x] Convert saved entity back to DTO
+  - [x] Return JobDTO
 
-- [ ] 5. Implement updateJob method
+- [x] 5. Implement updateJob method
 
-  - [ ] Method signature: `JobDTO updateJob(Long id, JobUpdateDTO dto)`
-  - [ ] Fetch existing job by id (throw exception if not found)
-  - [ ] If companyId in DTO, validate new company exists
-  - [ ] Update entity fields from DTO using mapper (only non-null fields)
-  - [ ] If company changed, update the relationship
-  - [ ] Save updated entity (optimistic lock version will be checked)
-  - [ ] Convert to DTO
-  - [ ] Return JobDTO
+  - [x] Method signature: `JobDTO updateJob(Long id, JobUpdateDTO dto)`
+  - [x] Fetch existing job by id (throw exception if not found)
+  - [x] If companyId in DTO, validate new company exists
+  - [x] Update entity fields from DTO using mapper (only non-null fields)
+  - [x] If company changed, update the relationship
+  - [x] Save updated entity (optimistic lock version will be checked)
+  - [x] Convert to DTO
+  - [x] Return JobDTO
 
-- [ ] 6. Implement deleteJob method
+- [x] 6. Implement deleteJob method
 
-  - [ ] Method signature: `void deleteJob(Long id)`
-  - [ ] Fetch job by id (throw exception if not found)
-  - [ ] Delete using repository.delete()
+  - [x] Method signature: `void deleteJob(Long id)`
+  - [x] Fetch job by id (throw exception if not found)
+  - [x] Delete using repository.delete()
 
-- [ ] 7. Add helper method to avoid N+1 queries
-  - [ ] Consider adding custom repository method with JOIN FETCH
-  - [ ] Or ensure mapper handles lazy loading properly
-  - [ ] Test with SQL logging to verify only necessary queries
+- [x] 7. Add helper method to avoid N+1 queries
+  - [x] Consider adding custom repository method with JOIN FETCH
+  - [x] Or ensure mapper handles lazy loading properly
+  - [x] Test with SQL logging to verify only necessary queries
 
 **Acceptance Criteria**:
 

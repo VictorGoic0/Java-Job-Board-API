@@ -2,22 +2,18 @@
 
 ## Current Focus
 
-PR #4 through PR #8 complete. Next: PR #9 (Company Service Layer).
+PR #9 and PR #10 complete. Next: PR #11 (Company Controller).
 
 ## Recent Changes
 
+- PR #10 completed: JobService (@Service, @Transactional); getAllJobs (findAllWithCompany JOIN FETCH), getJobById (JobDetailDTO), createJob (validate company), updateJob (validate company if companyId present), deleteJob; JobRepository.findAllWithCompany() for N+1 avoidance.
+- PR #9 completed: CompanyService (@Service, @Transactional), getAllCompanies, getCompanyById, createCompany, updateCompany (partial via mapper), deleteCompany; CompanyRepository and CompanyMapper injected.
 - PR #8 completed: GlobalExceptionHandler (@RestControllerAdvice); handlers for JobNotFoundException (404), CompanyNotFoundException (404), MethodArgumentNotValidException (400 + ValidationErrorResponse), ObjectOptimisticLockingFailureException (409), Exception (500 + log).
-- PR #7 completed: ErrorResponse and ValidationErrorResponse DTOs (model/dto).
-- PR #6 completed: JobNotFoundException, CompanyNotFoundException, InvalidJobDataException, OptimisticLockException (exception/).
-- PR #5 completed: JobDTO, JobDetailDTO, JobCreateDTO, JobUpdateDTO; ValidSalaryRange + SalaryRangeValidator (validation/); JobMapper (util/) with CompanyMapper for embedded company.
-- PR #4 completed: CompanySummaryDTO, CompanyDTO, CompanyCreateDTO, CompanyUpdateDTO; CompanyMapper (util/).
 
 ## Next Steps
 
-- PR #9: CompanyService (@Service, @Transactional), getAllCompanies, getCompanyById, createCompany, updateCompany (partial via mapper), deleteCompany; inject CompanyRepository and CompanyMapper.
-- PR #10: JobService (same pattern; avoid N+1 for company data; validate company exists on create/update).
-- PR #11: CompanyController (GET all, GET /{id}, POST, PATCH /{id}, DELETE /{id}).
-- PR #12: JobController (same; GET /api/jobs with embedded company, GET /{id} returns JobDetailDTO).
+- PR #11: CompanyController (GET /api/companies, GET /{id}, POST, PATCH /{id}, DELETE /{id}).
+- PR #12: JobController (GET /api/jobs, GET /{id}, POST, PATCH /{id}, DELETE /{id}; GET /{id} returns JobDetailDTO).
 
 ## Active Decisions
 
