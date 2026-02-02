@@ -586,47 +586,47 @@
 
 ### Tasks
 
-- [ ] 1. Create CompanyController class
+- [x] 1. Create CompanyController class
 
-  - [ ] Create `controller/CompanyController.java`
-  - [ ] Add `@RestController` annotation
-  - [ ] Add `@RequestMapping("/api/companies")` annotation
-  - [ ] Add `@Validated` annotation for method-level validation
-  - [ ] Inject CompanyService via constructor
+  - [x] Create `controller/CompanyController.java`
+  - [x] Add `@RestController` annotation
+  - [x] Add `@RequestMapping("/api/companies")` annotation
+  - [x] Add `@Validated` annotation for method-level validation
+  - [x] Inject CompanyService via constructor
 
-- [ ] 2. Implement GET /api/companies (get all)
+- [x] 2. Implement GET /api/companies (get all)
 
-  - [ ] Add method with `@GetMapping` annotation
-  - [ ] Method signature: `ResponseEntity<List<CompanyDTO>> getAllCompanies()`
-  - [ ] Call service.getAllCompanies()
-  - [ ] Return ResponseEntity.ok() with list
+  - [x] Add method with `@GetMapping` annotation
+  - [x] Method signature: `ResponseEntity<List<CompanyDTO>> getAllCompanies()`
+  - [x] Call service.getAllCompanies()
+  - [x] Return ResponseEntity.ok() with list
 
-- [ ] 3. Implement GET /api/companies/{id} (get by id)
+- [x] 3. Implement GET /api/companies/{id} (get by id)
 
-  - [ ] Add method with `@GetMapping("/{id}")` annotation
-  - [ ] Method signature: `ResponseEntity<CompanyDTO> getCompanyById(@PathVariable Long id)`
-  - [ ] Call service.getCompanyById(id)
-  - [ ] Return ResponseEntity.ok() with DTO
+  - [x] Add method with `@GetMapping("/{id}")` annotation
+  - [x] Method signature: `ResponseEntity<CompanyDTO> getCompanyById(@PathVariable Long id)`
+  - [x] Call service.getCompanyById(id)
+  - [x] Return ResponseEntity.ok() with DTO
 
-- [ ] 4. Implement POST /api/companies (create)
+- [x] 4. Implement POST /api/companies (create)
 
-  - [ ] Add method with `@PostMapping` annotation
-  - [ ] Method signature: `ResponseEntity<CompanyDTO> createCompany(@Valid @RequestBody CompanyCreateDTO dto)`
-  - [ ] Call service.createCompany(dto)
-  - [ ] Return ResponseEntity.status(HttpStatus.CREATED).body(result)
+  - [x] Add method with `@PostMapping` annotation
+  - [x] Method signature: `ResponseEntity<CompanyDTO> createCompany(@Valid @RequestBody CompanyCreateDTO dto)`
+  - [x] Call service.createCompany(dto)
+  - [x] Return ResponseEntity.status(HttpStatus.CREATED).body(result)
 
-- [ ] 5. Implement PATCH /api/companies/{id} (update)
+- [x] 5. Implement PATCH /api/companies/{id} (update)
 
-  - [ ] Add method with `@PatchMapping("/{id}")` annotation
-  - [ ] Method signature: `ResponseEntity<CompanyDTO> updateCompany(@PathVariable Long id, @Valid @RequestBody CompanyUpdateDTO dto)`
-  - [ ] Call service.updateCompany(id, dto)
-  - [ ] Return ResponseEntity.ok() with updated DTO
+  - [x] Add method with `@PatchMapping("/{id}")` annotation
+  - [x] Method signature: `ResponseEntity<CompanyDTO> updateCompany(@PathVariable Long id, @Valid @RequestBody CompanyUpdateDTO dto)`
+  - [x] Call service.updateCompany(id, dto)
+  - [x] Return ResponseEntity.ok() with updated DTO
 
-- [ ] 6. Implement DELETE /api/companies/{id} (delete)
-  - [ ] Add method with `@DeleteMapping("/{id}")` annotation
-  - [ ] Method signature: `ResponseEntity<Void> deleteCompany(@PathVariable Long id)`
-  - [ ] Call service.deleteCompany(id)
-  - [ ] Return ResponseEntity.noContent().build()
+- [x] 6. Implement DELETE /api/companies/{id} (delete)
+  - [x] Add method with `@DeleteMapping("/{id}")` annotation
+  - [x] Method signature: `ResponseEntity<Void> deleteCompany(@PathVariable Long id)`
+  - [x] Call service.deleteCompany(id)
+  - [x] Return ResponseEntity.noContent().build()
 
 **Acceptance Criteria**:
 
