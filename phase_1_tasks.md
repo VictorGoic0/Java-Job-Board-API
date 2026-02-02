@@ -446,53 +446,53 @@
 
 ### Tasks
 
-- [ ] 1. Create CompanyService class
+- [x] 1. Create CompanyService class
 
-  - [ ] Create `service/CompanyService.java`
-  - [ ] Add `@Service` annotation
-  - [ ] Add `@Transactional` annotation at class level
-  - [ ] Inject CompanyRepository via constructor
-  - [ ] Inject CompanyMapper via field or constructor
+  - [x] Create `service/CompanyService.java`
+  - [x] Add `@Service` annotation
+  - [x] Add `@Transactional` annotation at class level
+  - [x] Inject CompanyRepository via constructor
+  - [x] Inject CompanyMapper via field or constructor
 
-- [ ] 2. Implement getAllCompanies method
+- [x] 2. Implement getAllCompanies method
 
-  - [ ] Add `@Transactional(readOnly = true)` annotation
-  - [ ] Method signature: `List<CompanyDTO> getAllCompanies()`
-  - [ ] Fetch all companies from repository
-  - [ ] Convert entities to DTOs using mapper
-  - [ ] Return list of CompanyDTOs
+  - [x] Add `@Transactional(readOnly = true)` annotation
+  - [x] Method signature: `List<CompanyDTO> getAllCompanies()`
+  - [x] Fetch all companies from repository
+  - [x] Convert entities to DTOs using mapper
+  - [x] Return list of CompanyDTOs
 
-- [ ] 3. Implement getCompanyById method
+- [x] 3. Implement getCompanyById method
 
-  - [ ] Add `@Transactional(readOnly = true)` annotation
-  - [ ] Method signature: `CompanyDTO getCompanyById(Long id)`
-  - [ ] Fetch company by id using repository.findById()
-  - [ ] Throw CompanyNotFoundException if not found
-  - [ ] Convert entity to DTO
-  - [ ] Return CompanyDTO
+  - [x] Add `@Transactional(readOnly = true)` annotation
+  - [x] Method signature: `CompanyDTO getCompanyById(Long id)`
+  - [x] Fetch company by id using repository.findById()
+  - [x] Throw CompanyNotFoundException if not found
+  - [x] Convert entity to DTO
+  - [x] Return CompanyDTO
 
-- [ ] 4. Implement createCompany method
+- [x] 4. Implement createCompany method
 
-  - [ ] Method signature: `CompanyDTO createCompany(CompanyCreateDTO dto)`
-  - [ ] Convert DTO to entity using mapper
-  - [ ] Save entity using repository
-  - [ ] Convert saved entity back to DTO
-  - [ ] Return CompanyDTO
+  - [x] Method signature: `CompanyDTO createCompany(CompanyCreateDTO dto)`
+  - [x] Convert DTO to entity using mapper
+  - [x] Save entity using repository
+  - [x] Convert saved entity back to DTO
+  - [x] Return CompanyDTO
 
-- [ ] 5. Implement updateCompany method
+- [x] 5. Implement updateCompany method
 
-  - [ ] Method signature: `CompanyDTO updateCompany(Long id, CompanyUpdateDTO dto)`
-  - [ ] Fetch existing company by id (throw exception if not found)
-  - [ ] Update entity fields from DTO using mapper (only update non-null fields)
-  - [ ] Save updated entity
-  - [ ] Convert to DTO
-  - [ ] Return CompanyDTO
+  - [x] Method signature: `CompanyDTO updateCompany(Long id, CompanyUpdateDTO dto)`
+  - [x] Fetch existing company by id (throw exception if not found)
+  - [x] Update entity fields from DTO using mapper (only update non-null fields)
+  - [x] Save updated entity
+  - [x] Convert to DTO
+  - [x] Return CompanyDTO
 
-- [ ] 6. Implement deleteCompany method
-  - [ ] Method signature: `void deleteCompany(Long id)`
-  - [ ] Fetch company by id (throw exception if not found)
-  - [ ] Delete using repository.delete()
-  - [ ] Note: This will cascade delete all associated jobs
+- [x] 6. Implement deleteCompany method
+  - [x] Method signature: `void deleteCompany(Long id)`
+  - [x] Fetch company by id (throw exception if not found)
+  - [x] Delete using repository.delete()
+  - [x] Note: This will cascade delete all associated jobs
 
 **Acceptance Criteria**:
 
