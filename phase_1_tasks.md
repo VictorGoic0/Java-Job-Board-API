@@ -314,32 +314,32 @@
 
 ### Tasks
 
-- [ ] 1. Create JobNotFoundException
+- [x] 1. Create JobNotFoundException
 
-  - [ ] Create `exception/JobNotFoundException.java`
-  - [ ] Extend `RuntimeException`
-  - [ ] Add constructor accepting Long id
-  - [ ] Set message: "Job not found with id: {id}"
+  - [x] Create `exception/JobNotFoundException.java`
+  - [x] Extend `RuntimeException`
+  - [x] Add constructor accepting Long id
+  - [x] Set message: "Job not found with id: {id}"
 
-- [ ] 2. Create CompanyNotFoundException
+- [x] 2. Create CompanyNotFoundException
 
-  - [ ] Create `exception/CompanyNotFoundException.java`
-  - [ ] Extend `RuntimeException`
-  - [ ] Add constructor accepting Long id
-  - [ ] Set message: "Company not found with id: {id}"
+  - [x] Create `exception/CompanyNotFoundException.java`
+  - [x] Extend `RuntimeException`
+  - [x] Add constructor accepting Long id
+  - [x] Set message: "Company not found with id: {id}"
 
-- [ ] 3. Create InvalidJobDataException
+- [x] 3. Create InvalidJobDataException
 
-  - [ ] Create `exception/InvalidJobDataException.java`
-  - [ ] Extend `RuntimeException`
-  - [ ] Add constructor accepting String message
-  - [ ] Use for business logic validation failures
+  - [x] Create `exception/InvalidJobDataException.java`
+  - [x] Extend `RuntimeException`
+  - [x] Add constructor accepting String message
+  - [x] Use for business logic validation failures
 
-- [ ] 4. Create OptimisticLockException (optional, Spring has built-in)
-  - [ ] Create `exception/OptimisticLockException.java`
-  - [ ] Extend `RuntimeException`
-  - [ ] Add constructor accepting String message
-  - [ ] Use as wrapper for Spring's ObjectOptimisticLockingFailureException if needed
+- [x] 4. Create OptimisticLockException (optional, Spring has built-in)
+  - [x] Create `exception/OptimisticLockException.java`
+  - [x] Extend `RuntimeException`
+  - [x] Add constructor accepting String message
+  - [x] Use as wrapper for Spring's ObjectOptimisticLockingFailureException if needed
 
 **Acceptance Criteria**:
 
