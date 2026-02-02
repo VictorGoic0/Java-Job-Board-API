@@ -13,6 +13,7 @@
 ### Tasks
 
 - [x] 1. Initialize Spring Boot project using Spring Initializr
+
   - [x] Select Java 17
   - [x] Select Maven as build tool
   - [x] Select Spring Boot 3.2.x (latest stable)
@@ -21,6 +22,7 @@
   - [x] Set Artifact: `job-board-api`
 
 - [x] 2. Create project structure
+
   ```
   src/main/java/com/jobboard/
     ├── JobBoardApiApplication.java
@@ -36,6 +38,7 @@
   ```
 
 - [x] 3. Set up Docker Compose for PostgreSQL
+
   - [x] Create `docker-compose.yml` in project root
   - [x] Configure PostgreSQL service (image: postgres:15-alpine)
   - [x] Set environment variables (POSTGRES_DB, POSTGRES_USER, POSTGRES_PASSWORD)
@@ -44,6 +47,7 @@
   - [x] Test: Run `docker-compose up -d` and verify PostgreSQL is running
 
 - [x] 4. Configure application properties
+
   - [x] Create `src/main/resources/application.yml`
   - [x] Add datasource configuration (URL, username, password, driver)
   - [x] Add JPA/Hibernate configuration (ddl-auto, show-sql, format-sql, dialect)
@@ -52,17 +56,19 @@
   - [x] Add logging configuration for SQL and Hibernate
 
 - [x] 5. Verify application starts successfully
+
   - [x] Start PostgreSQL: `docker-compose up -d`
   - [x] Run Spring Boot application
   - [x] Check logs for successful database connection
   - [x] Verify no errors on startup
 
 - [x] 6. Create `.gitignore` file
+
   - [x] Add Maven build directories (target/)
-  - [x] Add IDE files (.idea/, *.iml, .vscode/)
+  - [x] Add IDE files (.idea/, \*.iml, .vscode/)
   - [x] Add OS files (.DS_Store, Thumbs.db)
-  - [x] Add environment files (*.env)
-  - [x] Add log files (*.log)
+  - [x] Add environment files (\*.env)
+  - [x] Add log files (\*.log)
 
 - [x] 7. Initialize Git repository
   - [x] Run `git init`
@@ -70,6 +76,7 @@
   - [x] Initial commit: `git commit -m "feat: Initial project setup with Spring Boot and PostgreSQL"`
 
 **Acceptance Criteria**:
+
 - PostgreSQL container starts successfully
 - Spring Boot application connects to database
 - No errors in application logs
@@ -84,9 +91,11 @@
 ### Tasks
 
 - [x] 1. Create Company entity enums (if needed)
+
   - [x] None required for Company in Phase I
 
 - [x] 2. Create Company entity class
+
   - [x] Create `model/entity/Company.java`
   - [x] Add `@Entity` and `@Table(name = "company")` annotations
   - [x] Add id field with `@Id` and `@GeneratedValue(strategy = IDENTITY)`
@@ -101,6 +110,7 @@
   - [x] Generate getters, setters, constructors using Lombok `@Data`
 
 - [x] 3. Enable JPA Auditing for timestamps
+
   - [x] Create `config/JpaConfig.java`
   - [x] Add `@Configuration` annotation
   - [x] Add `@EnableJpaAuditing` annotation
@@ -111,6 +121,7 @@
   - [x] Add method: `Optional<Company> findByName(String name)`
 
 **Acceptance Criteria**:
+
 - Company entity created with all required fields
 - Repository interface created
 - Database table auto-generated correctly
@@ -125,11 +136,13 @@
 ### Tasks
 
 - [x] 1. Create Job-related enums
+
   - [x] Create `model/entity/JobType.java` enum (FULL_TIME, PART_TIME, CONTRACT, INTERNSHIP)
   - [x] Create `model/entity/ExperienceLevel.java` enum (ENTRY, MID, SENIOR)
   - [x] Create `model/entity/RemoteOption.java` enum (REMOTE, HYBRID, ONSITE)
 
 - [x] 2. Create Job entity class
+
   - [x] Create `model/entity/Job.java`
   - [x] Add `@Entity` and `@Table(name = "job")` annotations
   - [x] Add id field with `@Id` and `@GeneratedValue`
@@ -151,12 +164,14 @@
   - [x] Add `@PrePersist` method to set postedDate to now
 
 - [x] 3. Add indexes to Job entity
+
   - [x] Add `@Table` annotation with indexes array
   - [x] Create index on company_id
   - [x] Create index on is_active
   - [x] Create index on posted_date
 
 - [x] 4. Create JobRepository interface
+
   - [x] Create `repository/JobRepository.java`
   - [x] Extend `JpaRepository<Job, Long>`
   - [x] Add method: `List<Job> findByCompanyId(Long companyId)`
@@ -170,6 +185,7 @@
   - [x] Verify enum columns are VARCHAR type
 
 **Acceptance Criteria**:
+
 - All three enums created
 - Job entity created with all fields and validation
 - Foreign key relationship to Company configured
@@ -184,40 +200,45 @@
 
 ### Tasks
 
-- [ ] 1. Create CompanySummaryDTO (for embedded responses)
-  - [ ] Create `model/dto/CompanySummaryDTO.java`
-  - [ ] Add fields: id, name, location
-  - [ ] Use Lombok `@Data` for getters/setters
-  - [ ] Add no-args and all-args constructors
+- [x] 1. Create CompanySummaryDTO (for embedded responses)
 
-- [ ] 2. Create CompanyDTO (for list responses)
-  - [ ] Create `model/dto/CompanyDTO.java`
-  - [ ] Add fields: id, name, description, website, location, createdAt, updatedAt
-  - [ ] Use Lombok `@Data`
-  - [ ] Add constructors
+  - [x] Create `model/dto/CompanySummaryDTO.java`
+  - [x] Add fields: id, name, location
+  - [x] Use Lombok `@Data` for getters/setters
+  - [x] Add no-args and all-args constructors
 
-- [ ] 3. Create CompanyCreateDTO (for POST requests)
-  - [ ] Create `model/dto/CompanyCreateDTO.java`
-  - [ ] Add fields: name, description, website, location
-  - [ ] Add validation annotations matching entity
-  - [ ] Use Lombok `@Data`
+- [x] 2. Create CompanyDTO (for list responses)
 
-- [ ] 4. Create CompanyUpdateDTO (for PATCH requests)
-  - [ ] Create `model/dto/CompanyUpdateDTO.java`
-  - [ ] Add optional fields: name, description, website, location
-  - [ ] All fields nullable for partial updates
-  - [ ] Add validation annotations (only validate if present)
-  - [ ] Use Lombok `@Data`
+  - [x] Create `model/dto/CompanyDTO.java`
+  - [x] Add fields: id, name, description, website, location, createdAt, updatedAt
+  - [x] Use Lombok `@Data`
+  - [x] Add constructors
 
-- [ ] 5. Create DTO mapper utility for Company
-  - [ ] Create `util/CompanyMapper.java` class
-  - [ ] Add method: `CompanyDTO toDTO(Company entity)`
-  - [ ] Add method: `CompanySummaryDTO toSummaryDTO(Company entity)`
-  - [ ] Add method: `Company toEntity(CompanyCreateDTO dto)`
-  - [ ] Add method: `void updateEntityFromDTO(Company entity, CompanyUpdateDTO dto)`
-  - [ ] Handle null checks in mapper methods
+- [x] 3. Create CompanyCreateDTO (for POST requests)
+
+  - [x] Create `model/dto/CompanyCreateDTO.java`
+  - [x] Add fields: name, description, website, location
+  - [x] Add validation annotations matching entity
+  - [x] Use Lombok `@Data`
+
+- [x] 4. Create CompanyUpdateDTO (for PATCH requests)
+
+  - [x] Create `model/dto/CompanyUpdateDTO.java`
+  - [x] Add optional fields: name, description, website, location
+  - [x] All fields nullable for partial updates
+  - [x] Add validation annotations (only validate if present)
+  - [x] Use Lombok `@Data`
+
+- [x] 5. Create DTO mapper utility for Company
+  - [x] Create `util/CompanyMapper.java` class
+  - [x] Add method: `CompanyDTO toDTO(Company entity)`
+  - [x] Add method: `CompanySummaryDTO toSummaryDTO(Company entity)`
+  - [x] Add method: `Company toEntity(CompanyCreateDTO dto)`
+  - [x] Add method: `void updateEntityFromDTO(Company entity, CompanyUpdateDTO dto)`
+  - [x] Handle null checks in mapper methods
 
 **Acceptance Criteria**:
+
 - All Company DTOs created
 - Validation annotations applied correctly
 - Mapper utility created with conversion methods
@@ -232,6 +253,7 @@
 ### Tasks
 
 - [ ] 1. Create JobDTO (for list responses)
+
   - [ ] Create `model/dto/JobDTO.java`
   - [ ] Add fields: id, title, location, salaryMin, salaryMax, jobType, experienceLevel, remoteOption, postedDate, isActive
   - [ ] Add field: CompanySummaryDTO company (embedded company info)
@@ -239,12 +261,14 @@
   - [ ] Add constructors
 
 - [ ] 2. Create JobDetailDTO (for single job responses)
+
   - [ ] Create `model/dto/JobDetailDTO.java`
   - [ ] Extend JobDTO or include all JobDTO fields
   - [ ] Add additional fields: description, expiryDate, applicationUrl, createdAt, updatedAt
   - [ ] Use Lombok `@Data`
 
 - [ ] 3. Create JobCreateDTO (for POST requests)
+
   - [ ] Create `model/dto/JobCreateDTO.java`
   - [ ] Add fields: title, description, companyId, location, salaryMin, salaryMax, jobType, experienceLevel, remoteOption, expiryDate, applicationUrl
   - [ ] Add validation annotations matching entity
@@ -252,6 +276,7 @@
   - [ ] Use Lombok `@Data`
 
 - [ ] 4. Create JobUpdateDTO (for PATCH requests)
+
   - [ ] Create `model/dto/JobUpdateDTO.java`
   - [ ] Add optional fields matching JobCreateDTO
   - [ ] All fields nullable for partial updates
@@ -259,6 +284,7 @@
   - [ ] Use Lombok `@Data`
 
 - [ ] 5. Create custom validator for salary range
+
   - [ ] Create `validation/ValidSalaryRange.java` annotation
   - [ ] Create `validation/SalaryRangeValidator.java` class
   - [ ] Implement logic: salaryMax >= salaryMin if both present
@@ -274,6 +300,7 @@
   - [ ] Handle null checks and optional fields
 
 **Acceptance Criteria**:
+
 - All Job DTOs created
 - Custom salary range validator implemented
 - Mapper utility created with all conversion methods
@@ -288,18 +315,21 @@
 ### Tasks
 
 - [ ] 1. Create JobNotFoundException
+
   - [ ] Create `exception/JobNotFoundException.java`
   - [ ] Extend `RuntimeException`
   - [ ] Add constructor accepting Long id
   - [ ] Set message: "Job not found with id: {id}"
 
 - [ ] 2. Create CompanyNotFoundException
+
   - [ ] Create `exception/CompanyNotFoundException.java`
   - [ ] Extend `RuntimeException`
   - [ ] Add constructor accepting Long id
   - [ ] Set message: "Company not found with id: {id}"
 
 - [ ] 3. Create InvalidJobDataException
+
   - [ ] Create `exception/InvalidJobDataException.java`
   - [ ] Extend `RuntimeException`
   - [ ] Add constructor accepting String message
@@ -312,6 +342,7 @@
   - [ ] Use as wrapper for Spring's ObjectOptimisticLockingFailureException if needed
 
 **Acceptance Criteria**:
+
 - All custom exception classes created
 - Exceptions extend RuntimeException (unchecked)
 - Clear, descriptive error messages
@@ -326,6 +357,7 @@
 ### Tasks
 
 - [ ] 1. Create ErrorResponse DTO
+
   - [ ] Create `model/dto/ErrorResponse.java`
   - [ ] Add fields: message (String), status (int), timestamp (LocalDateTime)
   - [ ] Add all-args constructor
@@ -339,6 +371,7 @@
   - [ ] Add getters
 
 **Acceptance Criteria**:
+
 - ErrorResponse DTO created for general errors
 - ValidationErrorResponse created for validation errors
 - Both DTOs properly structured for JSON serialization
@@ -353,20 +386,24 @@
 ### Tasks
 
 - [ ] 1. Create GlobalExceptionHandler class
+
   - [ ] Create `exception/GlobalExceptionHandler.java`
   - [ ] Add `@RestControllerAdvice` annotation
 
 - [ ] 2. Handle JobNotFoundException
+
   - [ ] Add method with `@ExceptionHandler(JobNotFoundException.class)`
   - [ ] Add `@ResponseStatus(HttpStatus.NOT_FOUND)`
   - [ ] Return ErrorResponse with message, 404 status, and current timestamp
 
 - [ ] 3. Handle CompanyNotFoundException
+
   - [ ] Add method with `@ExceptionHandler(CompanyNotFoundException.class)`
   - [ ] Add `@ResponseStatus(HttpStatus.NOT_FOUND)`
   - [ ] Return ErrorResponse with message, 404 status, and timestamp
 
 - [ ] 4. Handle MethodArgumentNotValidException (validation errors)
+
   - [ ] Add method with `@ExceptionHandler(MethodArgumentNotValidException.class)`
   - [ ] Add `@ResponseStatus(HttpStatus.BAD_REQUEST)`
   - [ ] Extract field errors from BindingResult
@@ -374,12 +411,14 @@
   - [ ] Return ValidationErrorResponse with errors map, 400 status, and timestamp
 
 - [ ] 5. Handle ObjectOptimisticLockingFailureException (concurrency)
+
   - [ ] Add method with `@ExceptionHandler(ObjectOptimisticLockingFailureException.class)`
   - [ ] Add `@ResponseStatus(HttpStatus.CONFLICT)`
   - [ ] Return ErrorResponse with user-friendly message about concurrent modification
   - [ ] Use 409 status and timestamp
 
 - [ ] 6. Handle generic Exception (catch-all)
+
   - [ ] Add method with `@ExceptionHandler(Exception.class)`
   - [ ] Add `@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)`
   - [ ] Return ErrorResponse with generic message "An unexpected error occurred"
@@ -391,6 +430,7 @@
   - [ ] Log error details in catch-all handler
 
 **Acceptance Criteria**:
+
 - Global exception handler created with @RestControllerAdvice
 - All exception types handled with appropriate HTTP status codes
 - Error responses properly formatted
@@ -407,6 +447,7 @@
 ### Tasks
 
 - [ ] 1. Create CompanyService class
+
   - [ ] Create `service/CompanyService.java`
   - [ ] Add `@Service` annotation
   - [ ] Add `@Transactional` annotation at class level
@@ -414,6 +455,7 @@
   - [ ] Inject CompanyMapper via field or constructor
 
 - [ ] 2. Implement getAllCompanies method
+
   - [ ] Add `@Transactional(readOnly = true)` annotation
   - [ ] Method signature: `List<CompanyDTO> getAllCompanies()`
   - [ ] Fetch all companies from repository
@@ -421,6 +463,7 @@
   - [ ] Return list of CompanyDTOs
 
 - [ ] 3. Implement getCompanyById method
+
   - [ ] Add `@Transactional(readOnly = true)` annotation
   - [ ] Method signature: `CompanyDTO getCompanyById(Long id)`
   - [ ] Fetch company by id using repository.findById()
@@ -429,6 +472,7 @@
   - [ ] Return CompanyDTO
 
 - [ ] 4. Implement createCompany method
+
   - [ ] Method signature: `CompanyDTO createCompany(CompanyCreateDTO dto)`
   - [ ] Convert DTO to entity using mapper
   - [ ] Save entity using repository
@@ -436,6 +480,7 @@
   - [ ] Return CompanyDTO
 
 - [ ] 5. Implement updateCompany method
+
   - [ ] Method signature: `CompanyDTO updateCompany(Long id, CompanyUpdateDTO dto)`
   - [ ] Fetch existing company by id (throw exception if not found)
   - [ ] Update entity fields from DTO using mapper (only update non-null fields)
@@ -450,6 +495,7 @@
   - [ ] Note: This will cascade delete all associated jobs
 
 **Acceptance Criteria**:
+
 - CompanyService created with all CRUD methods
 - Proper transaction management with @Transactional
 - Read-only transactions for query methods
@@ -465,6 +511,7 @@
 ### Tasks
 
 - [ ] 1. Create JobService class
+
   - [ ] Create `service/JobService.java`
   - [ ] Add `@Service` annotation
   - [ ] Add `@Transactional` annotation at class level
@@ -473,6 +520,7 @@
   - [ ] Inject JobMapper via field or constructor
 
 - [ ] 2. Implement getAllJobs method
+
   - [ ] Add `@Transactional(readOnly = true)` annotation
   - [ ] Method signature: `List<JobDTO> getAllJobs()`
   - [ ] Use JPQL query with JOIN FETCH to load company data (avoid N+1)
@@ -481,6 +529,7 @@
   - [ ] Return list of JobDTOs with embedded company data
 
 - [ ] 3. Implement getJobById method
+
   - [ ] Add `@Transactional(readOnly = true)` annotation
   - [ ] Method signature: `JobDetailDTO getJobById(Long id)`
   - [ ] Fetch job by id using repository.findById()
@@ -489,6 +538,7 @@
   - [ ] Return JobDetailDTO
 
 - [ ] 4. Implement createJob method
+
   - [ ] Method signature: `JobDTO createJob(JobCreateDTO dto)`
   - [ ] Validate company exists: fetch by companyId
   - [ ] Throw CompanyNotFoundException if company not found
@@ -498,6 +548,7 @@
   - [ ] Return JobDTO
 
 - [ ] 5. Implement updateJob method
+
   - [ ] Method signature: `JobDTO updateJob(Long id, JobUpdateDTO dto)`
   - [ ] Fetch existing job by id (throw exception if not found)
   - [ ] If companyId in DTO, validate new company exists
@@ -508,6 +559,7 @@
   - [ ] Return JobDTO
 
 - [ ] 6. Implement deleteJob method
+
   - [ ] Method signature: `void deleteJob(Long id)`
   - [ ] Fetch job by id (throw exception if not found)
   - [ ] Delete using repository.delete()
@@ -518,6 +570,7 @@
   - [ ] Test with SQL logging to verify only necessary queries
 
 **Acceptance Criteria**:
+
 - JobService created with all CRUD methods
 - Company validation before creating/updating jobs
 - Proper transaction management
@@ -534,6 +587,7 @@
 ### Tasks
 
 - [ ] 1. Create CompanyController class
+
   - [ ] Create `controller/CompanyController.java`
   - [ ] Add `@RestController` annotation
   - [ ] Add `@RequestMapping("/api/companies")` annotation
@@ -541,24 +595,28 @@
   - [ ] Inject CompanyService via constructor
 
 - [ ] 2. Implement GET /api/companies (get all)
+
   - [ ] Add method with `@GetMapping` annotation
   - [ ] Method signature: `ResponseEntity<List<CompanyDTO>> getAllCompanies()`
   - [ ] Call service.getAllCompanies()
   - [ ] Return ResponseEntity.ok() with list
 
 - [ ] 3. Implement GET /api/companies/{id} (get by id)
+
   - [ ] Add method with `@GetMapping("/{id}")` annotation
   - [ ] Method signature: `ResponseEntity<CompanyDTO> getCompanyById(@PathVariable Long id)`
   - [ ] Call service.getCompanyById(id)
   - [ ] Return ResponseEntity.ok() with DTO
 
 - [ ] 4. Implement POST /api/companies (create)
+
   - [ ] Add method with `@PostMapping` annotation
   - [ ] Method signature: `ResponseEntity<CompanyDTO> createCompany(@Valid @RequestBody CompanyCreateDTO dto)`
   - [ ] Call service.createCompany(dto)
   - [ ] Return ResponseEntity.status(HttpStatus.CREATED).body(result)
 
 - [ ] 5. Implement PATCH /api/companies/{id} (update)
+
   - [ ] Add method with `@PatchMapping("/{id}")` annotation
   - [ ] Method signature: `ResponseEntity<CompanyDTO> updateCompany(@PathVariable Long id, @Valid @RequestBody CompanyUpdateDTO dto)`
   - [ ] Call service.updateCompany(id, dto)
@@ -571,6 +629,7 @@
   - [ ] Return ResponseEntity.noContent().build()
 
 **Acceptance Criteria**:
+
 - CompanyController created with all endpoints
 - Proper HTTP methods used (GET, POST, PATCH, DELETE)
 - Validation enabled with @Valid
@@ -586,6 +645,7 @@
 ### Tasks
 
 - [ ] 1. Create JobController class
+
   - [ ] Create `controller/JobController.java`
   - [ ] Add `@RestController` annotation
   - [ ] Add `@RequestMapping("/api/jobs")` annotation
@@ -593,24 +653,28 @@
   - [ ] Inject JobService via constructor
 
 - [ ] 2. Implement GET /api/jobs (get all)
+
   - [ ] Add method with `@GetMapping` annotation
   - [ ] Method signature: `ResponseEntity<List<JobDTO>> getAllJobs()`
   - [ ] Call service.getAllJobs()
   - [ ] Return ResponseEntity.ok() with list (includes embedded company data)
 
 - [ ] 3. Implement GET /api/jobs/{id} (get by id with full details)
+
   - [ ] Add method with `@GetMapping("/{id}")` annotation
   - [ ] Method signature: `ResponseEntity<JobDetailDTO> getJobById(@PathVariable Long id)`
   - [ ] Call service.getJobById(id)
   - [ ] Return ResponseEntity.ok() with JobDetailDTO
 
 - [ ] 4. Implement POST /api/jobs (create)
+
   - [ ] Add method with `@PostMapping` annotation
   - [ ] Method signature: `ResponseEntity<JobDTO> createJob(@Valid @RequestBody JobCreateDTO dto)`
   - [ ] Call service.createJob(dto)
   - [ ] Return ResponseEntity.status(HttpStatus.CREATED).body(result)
 
 - [ ] 5. Implement PATCH /api/jobs/{id} (update)
+
   - [ ] Add method with `@PatchMapping("/{id}")` annotation
   - [ ] Method signature: `ResponseEntity<JobDTO> updateJob(@PathVariable Long id, @Valid @RequestBody JobUpdateDTO dto)`
   - [ ] Call service.updateJob(id, dto)
@@ -623,6 +687,7 @@
   - [ ] Return ResponseEntity.noContent().build()
 
 **Acceptance Criteria**:
+
 - JobController created with all endpoints
 - GET /api/jobs returns jobs with company data via join
 - GET /api/jobs/{id} returns full details (JobDetailDTO)
@@ -637,6 +702,7 @@
 **Note**: Execute these tests using Postman, Insomnia, or curl
 
 ### Setup
+
 - [ ] PostgreSQL container is running
 - [ ] Application starts without errors
 - [ ] Database tables created (company, job)
@@ -644,25 +710,30 @@
 ### Company Endpoints
 
 #### Create Company (POST /api/companies)
+
 - [ ] Create company with all fields - returns 201
 - [ ] Create company without name - returns 400 with validation error
 - [ ] Create company with invalid website URL - returns 400
 
 #### Get All Companies (GET /api/companies)
+
 - [ ] Returns empty list initially - returns 200
 - [ ] After creating companies, returns full list - returns 200
 
 #### Get Company By ID (GET /api/companies/{id})
+
 - [ ] Get existing company - returns 200 with company data
 - [ ] Get non-existent company - returns 404 with error message
 
 #### Update Company (PATCH /api/companies/{id})
+
 - [ ] Update single field (e.g., name only) - returns 200
 - [ ] Update multiple fields - returns 200
 - [ ] Verify unchanged fields remain the same
 - [ ] Update non-existent company - returns 404
 
 #### Delete Company (DELETE /api/companies/{id})
+
 - [ ] Delete existing company - returns 204
 - [ ] Verify company no longer exists - GET returns 404
 - [ ] Delete non-existent company - returns 404
@@ -670,6 +741,7 @@
 ### Job Endpoints
 
 #### Create Job (POST /api/jobs)
+
 - [ ] Create job with valid company ID - returns 201
 - [ ] Create job with invalid company ID - returns 404
 - [ ] Create job without required fields - returns 400
@@ -678,21 +750,25 @@
 - [ ] Verify postedDate is auto-set
 
 #### Get All Jobs (GET /api/jobs)
+
 - [ ] Returns empty list initially - returns 200
 - [ ] After creating jobs, returns list with embedded company data
 - [ ] Verify company name and location are included
 
 #### Get Job By ID (GET /api/jobs/{id})
+
 - [ ] Get existing job - returns 200 with full details including description
 - [ ] Get non-existent job - returns 404
 
 #### Update Job (PATCH /api/jobs/{id})
+
 - [ ] Update single field - returns 200
 - [ ] Update company ID to different valid company - returns 200
 - [ ] Update with invalid company ID - returns 404
 - [ ] Verify optimistic locking version increments
 
 #### Delete Job (DELETE /api/jobs/{id})
+
 - [ ] Delete existing job - returns 204
 - [ ] Verify job deleted - GET returns 404
 - [ ] Delete non-existent job - returns 404
@@ -700,6 +776,7 @@
 ### Concurrency Testing
 
 #### Optimistic Locking
+
 - [ ] Fetch same job in two separate requests (note version number)
 - [ ] Update job in first request - succeeds
 - [ ] Attempt to update same job with old version in second request - returns 409 Conflict
@@ -708,11 +785,13 @@
 ### Relationship Testing
 
 #### Cascade Delete
+
 - [ ] Create company with multiple jobs
 - [ ] Delete the company
 - [ ] Verify all associated jobs are also deleted (ON DELETE CASCADE)
 
 ### Validation Testing
+
 - [ ] Test @NotBlank on required string fields
 - [ ] Test @NotNull on required fields
 - [ ] Test @DecimalMin on salary fields
@@ -721,6 +800,7 @@
 - [ ] Test enum validation
 
 ### Error Response Format
+
 - [ ] Verify 404 errors return ErrorResponse with message, status, timestamp
 - [ ] Verify 400 validation errors return ValidationErrorResponse with field errors
 - [ ] Verify 409 optimistic lock errors return proper message
