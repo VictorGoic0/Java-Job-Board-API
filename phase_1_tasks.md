@@ -356,19 +356,19 @@
 
 ### Tasks
 
-- [ ] 1. Create ErrorResponse DTO
+- [x] 1. Create ErrorResponse DTO
 
-  - [ ] Create `model/dto/ErrorResponse.java`
-  - [ ] Add fields: message (String), status (int), timestamp (LocalDateTime)
-  - [ ] Add all-args constructor
-  - [ ] Add getters (use Lombok `@Getter` and `@AllArgsConstructor`)
+  - [x] Create `model/dto/ErrorResponse.java`
+  - [x] Add fields: message (String), status (int), timestamp (LocalDateTime)
+  - [x] Add all-args constructor
+  - [x] Add getters (use Lombok `@Getter` and `@AllArgsConstructor`)
 
-- [ ] 2. Create ValidationErrorResponse DTO
-  - [ ] Create `model/dto/ValidationErrorResponse.java`
-  - [ ] Extend ErrorResponse or include its fields
-  - [ ] Add field: errors (Map<String, String>) for field-level errors
-  - [ ] Add all-args constructor
-  - [ ] Add getters
+- [x] 2. Create ValidationErrorResponse DTO
+  - [x] Create `model/dto/ValidationErrorResponse.java`
+  - [x] Extend ErrorResponse or include its fields
+  - [x] Add field: errors (Map<String, String>) for field-level errors
+  - [x] Add all-args constructor
+  - [x] Add getters
 
 **Acceptance Criteria**:
 
