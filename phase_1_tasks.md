@@ -385,49 +385,49 @@
 
 ### Tasks
 
-- [ ] 1. Create GlobalExceptionHandler class
+- [x] 1. Create GlobalExceptionHandler class
 
-  - [ ] Create `exception/GlobalExceptionHandler.java`
-  - [ ] Add `@RestControllerAdvice` annotation
+  - [x] Create `exception/GlobalExceptionHandler.java`
+  - [x] Add `@RestControllerAdvice` annotation
 
-- [ ] 2. Handle JobNotFoundException
+- [x] 2. Handle JobNotFoundException
 
-  - [ ] Add method with `@ExceptionHandler(JobNotFoundException.class)`
-  - [ ] Add `@ResponseStatus(HttpStatus.NOT_FOUND)`
-  - [ ] Return ErrorResponse with message, 404 status, and current timestamp
+  - [x] Add method with `@ExceptionHandler(JobNotFoundException.class)`
+  - [x] Add `@ResponseStatus(HttpStatus.NOT_FOUND)`
+  - [x] Return ErrorResponse with message, 404 status, and current timestamp
 
-- [ ] 3. Handle CompanyNotFoundException
+- [x] 3. Handle CompanyNotFoundException
 
-  - [ ] Add method with `@ExceptionHandler(CompanyNotFoundException.class)`
-  - [ ] Add `@ResponseStatus(HttpStatus.NOT_FOUND)`
-  - [ ] Return ErrorResponse with message, 404 status, and timestamp
+  - [x] Add method with `@ExceptionHandler(CompanyNotFoundException.class)`
+  - [x] Add `@ResponseStatus(HttpStatus.NOT_FOUND)`
+  - [x] Return ErrorResponse with message, 404 status, and timestamp
 
-- [ ] 4. Handle MethodArgumentNotValidException (validation errors)
+- [x] 4. Handle MethodArgumentNotValidException (validation errors)
 
-  - [ ] Add method with `@ExceptionHandler(MethodArgumentNotValidException.class)`
-  - [ ] Add `@ResponseStatus(HttpStatus.BAD_REQUEST)`
-  - [ ] Extract field errors from BindingResult
-  - [ ] Build Map<String, String> of field names to error messages
-  - [ ] Return ValidationErrorResponse with errors map, 400 status, and timestamp
+  - [x] Add method with `@ExceptionHandler(MethodArgumentNotValidException.class)`
+  - [x] Add `@ResponseStatus(HttpStatus.BAD_REQUEST)`
+  - [x] Extract field errors from BindingResult
+  - [x] Build Map<String, String> of field names to error messages
+  - [x] Return ValidationErrorResponse with errors map, 400 status, and timestamp
 
-- [ ] 5. Handle ObjectOptimisticLockingFailureException (concurrency)
+- [x] 5. Handle ObjectOptimisticLockingFailureException (concurrency)
 
-  - [ ] Add method with `@ExceptionHandler(ObjectOptimisticLockingFailureException.class)`
-  - [ ] Add `@ResponseStatus(HttpStatus.CONFLICT)`
-  - [ ] Return ErrorResponse with user-friendly message about concurrent modification
-  - [ ] Use 409 status and timestamp
+  - [x] Add method with `@ExceptionHandler(ObjectOptimisticLockingFailureException.class)`
+  - [x] Add `@ResponseStatus(HttpStatus.CONFLICT)`
+  - [x] Return ErrorResponse with user-friendly message about concurrent modification
+  - [x] Use 409 status and timestamp
 
-- [ ] 6. Handle generic Exception (catch-all)
+- [x] 6. Handle generic Exception (catch-all)
 
-  - [ ] Add method with `@ExceptionHandler(Exception.class)`
-  - [ ] Add `@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)`
-  - [ ] Return ErrorResponse with generic message "An unexpected error occurred"
-  - [ ] Use 500 status and timestamp
-  - [ ] Log full exception with logger for debugging
+  - [x] Add method with `@ExceptionHandler(Exception.class)`
+  - [x] Add `@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)`
+  - [x] Return ErrorResponse with generic message "An unexpected error occurred"
+  - [x] Use 500 status and timestamp
+  - [x] Log full exception with logger for debugging
 
-- [ ] 7. Add SLF4J logger
-  - [ ] Add `private static final Logger log = LoggerFactory.getLogger(GlobalExceptionHandler.class)`
-  - [ ] Log error details in catch-all handler
+- [x] 7. Add SLF4J logger
+  - [x] Add `private static final Logger log = LoggerFactory.getLogger(GlobalExceptionHandler.class)`
+  - [x] Log error details in catch-all handler
 
 **Acceptance Criteria**:
 
