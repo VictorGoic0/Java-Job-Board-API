@@ -12,18 +12,19 @@
 - **PR #8 complete**: GlobalExceptionHandler (@RestControllerAdvice); 404 for Job/Company not found, 400 + field errors for validation, 409 for optimistic lock, 500 + log for generic Exception.
 - **PR #9 complete**: CompanyService (getAllCompanies, getCompanyById, createCompany, updateCompany, deleteCompany); CompanyRepository and CompanyMapper.
 - **PR #10 complete**: JobService (getAllJobs via findAllWithCompany JOIN FETCH, getJobById → JobDetailDTO, createJob, updateJob, deleteJob); company validation on create/update; JobRepository.findAllWithCompany().
+- **PR #11 complete**: CompanyController (GET /api/companies, GET /{id}, POST, PATCH /{id}, DELETE /{id}); 200/201/204.
+- **PR #12 complete**: JobController (GET /api/jobs, GET /{id} JobDetailDTO, POST, PATCH /{id}, DELETE /{id}); 200/201/204.
 - PRD and phase task files; Memory Bank; Cursor rule for PR completion and Vader quote sign-off.
 
 ## What's Left to Build
 
-- **Phase I (remaining)**: PR #11 CompanyController → PR #12 JobController → full CRUD, validation, optimistic locking.
 - **Phase II**: Search/filter, pagination, active jobs, deactivate.
 - **Phase III**: Unit, repository, controller tests.
 - **Phase IV**: Security (JWT), User, file upload, Application entity, scheduled expiration.
 
 ## Current Status
 
-Phase I, PR #10 done. Ready for PR #11 (Company Controller).
+Phase I complete (PR #1–#12). Full CRUD for companies and jobs; validation; global exception handling; optimistic locking. Ready for Phase II or Phase III.
 
 ## Known Issues
 

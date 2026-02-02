@@ -2,18 +2,19 @@
 
 ## Current Focus
 
-PR #9 and PR #10 complete. Next: PR #11 (Company Controller).
+Phase I complete (PR #1–#12). Next: Phase II (search, pagination, active jobs, deactivate) or Phase III (testing).
 
 ## Recent Changes
 
-- PR #10 completed: JobService (@Service, @Transactional); getAllJobs (findAllWithCompany JOIN FETCH), getJobById (JobDetailDTO), createJob (validate company), updateJob (validate company if companyId present), deleteJob; JobRepository.findAllWithCompany() for N+1 avoidance.
-- PR #9 completed: CompanyService (@Service, @Transactional), getAllCompanies, getCompanyById, createCompany, updateCompany (partial via mapper), deleteCompany; CompanyRepository and CompanyMapper injected.
-- PR #8 completed: GlobalExceptionHandler (@RestControllerAdvice); handlers for JobNotFoundException (404), CompanyNotFoundException (404), MethodArgumentNotValidException (400 + ValidationErrorResponse), ObjectOptimisticLockingFailureException (409), Exception (500 + log).
+- PR #12 completed: JobController (@RestController, /api/jobs); GET all (List<JobDTO>), GET /{id} (JobDetailDTO), POST (201 + JobDTO), PATCH /{id}, DELETE /{id} (204).
+- PR #11 completed: CompanyController (@RestController, /api/companies); GET all, GET /{id}, POST (201), PATCH /{id}, DELETE /{id} (204).
+- PR #10 completed: JobService; getAllJobs (findAllWithCompany JOIN FETCH), getJobById (JobDetailDTO), createJob, updateJob, deleteJob; company validation; JobRepository.findAllWithCompany().
+- PR #9 completed: CompanyService; getAllCompanies, getCompanyById, createCompany, updateCompany, deleteCompany.
 
 ## Next Steps
 
-- PR #11: CompanyController (GET /api/companies, GET /{id}, POST, PATCH /{id}, DELETE /{id}).
-- PR #12: JobController (GET /api/jobs, GET /{id}, POST, PATCH /{id}, DELETE /{id}; GET /{id} returns JobDetailDTO).
+- Phase II: Search/filter endpoint, pagination, GET /api/jobs/active, POST /api/jobs/{id}/deactivate.
+- Phase III: Unit tests (services), repository tests, controller tests.
 
 ## Active Decisions
 

@@ -644,47 +644,47 @@
 
 ### Tasks
 
-- [ ] 1. Create JobController class
+- [x] 1. Create JobController class
 
-  - [ ] Create `controller/JobController.java`
-  - [ ] Add `@RestController` annotation
-  - [ ] Add `@RequestMapping("/api/jobs")` annotation
-  - [ ] Add `@Validated` annotation
-  - [ ] Inject JobService via constructor
+  - [x] Create `controller/JobController.java`
+  - [x] Add `@RestController` annotation
+  - [x] Add `@RequestMapping("/api/jobs")` annotation
+  - [x] Add `@Validated` annotation
+  - [x] Inject JobService via constructor
 
-- [ ] 2. Implement GET /api/jobs (get all)
+- [x] 2. Implement GET /api/jobs (get all)
 
-  - [ ] Add method with `@GetMapping` annotation
-  - [ ] Method signature: `ResponseEntity<List<JobDTO>> getAllJobs()`
-  - [ ] Call service.getAllJobs()
-  - [ ] Return ResponseEntity.ok() with list (includes embedded company data)
+  - [x] Add method with `@GetMapping` annotation
+  - [x] Method signature: `ResponseEntity<List<JobDTO>> getAllJobs()`
+  - [x] Call service.getAllJobs()
+  - [x] Return ResponseEntity.ok() with list (includes embedded company data)
 
-- [ ] 3. Implement GET /api/jobs/{id} (get by id with full details)
+- [x] 3. Implement GET /api/jobs/{id} (get by id with full details)
 
-  - [ ] Add method with `@GetMapping("/{id}")` annotation
-  - [ ] Method signature: `ResponseEntity<JobDetailDTO> getJobById(@PathVariable Long id)`
-  - [ ] Call service.getJobById(id)
-  - [ ] Return ResponseEntity.ok() with JobDetailDTO
+  - [x] Add method with `@GetMapping("/{id}")` annotation
+  - [x] Method signature: `ResponseEntity<JobDetailDTO> getJobById(@PathVariable Long id)`
+  - [x] Call service.getJobById(id)
+  - [x] Return ResponseEntity.ok() with JobDetailDTO
 
-- [ ] 4. Implement POST /api/jobs (create)
+- [x] 4. Implement POST /api/jobs (create)
 
-  - [ ] Add method with `@PostMapping` annotation
-  - [ ] Method signature: `ResponseEntity<JobDTO> createJob(@Valid @RequestBody JobCreateDTO dto)`
-  - [ ] Call service.createJob(dto)
-  - [ ] Return ResponseEntity.status(HttpStatus.CREATED).body(result)
+  - [x] Add method with `@PostMapping` annotation
+  - [x] Method signature: `ResponseEntity<JobDTO> createJob(@Valid @RequestBody JobCreateDTO dto)`
+  - [x] Call service.createJob(dto)
+  - [x] Return ResponseEntity.status(HttpStatus.CREATED).body(result)
 
-- [ ] 5. Implement PATCH /api/jobs/{id} (update)
+- [x] 5. Implement PATCH /api/jobs/{id} (update)
 
-  - [ ] Add method with `@PatchMapping("/{id}")` annotation
-  - [ ] Method signature: `ResponseEntity<JobDTO> updateJob(@PathVariable Long id, @Valid @RequestBody JobUpdateDTO dto)`
-  - [ ] Call service.updateJob(id, dto)
-  - [ ] Return ResponseEntity.ok() with updated DTO
+  - [x] Add method with `@PatchMapping("/{id}")` annotation
+  - [x] Method signature: `ResponseEntity<JobDTO> updateJob(@PathVariable Long id, @Valid @RequestBody JobUpdateDTO dto)`
+  - [x] Call service.updateJob(id, dto)
+  - [x] Return ResponseEntity.ok() with updated DTO
 
-- [ ] 6. Implement DELETE /api/jobs/{id} (delete)
-  - [ ] Add method with `@DeleteMapping("/{id}")` annotation
-  - [ ] Method signature: `ResponseEntity<Void> deleteJob(@PathVariable Long id)`
-  - [ ] Call service.deleteJob(id)
-  - [ ] Return ResponseEntity.noContent().build()
+- [x] 6. Implement DELETE /api/jobs/{id} (delete)
+  - [x] Add method with `@DeleteMapping("/{id}")` annotation
+  - [x] Method signature: `ResponseEntity<Void> deleteJob(@PathVariable Long id)`
+  - [x] Call service.deleteJob(id)
+  - [x] Return ResponseEntity.noContent().build()
 
 **Acceptance Criteria**:
 
