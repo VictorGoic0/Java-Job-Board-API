@@ -2,10 +2,11 @@
 
 ## Current Focus
 
-Phase I complete (PR #1–#12). Next: Phase II (search, pagination, active jobs, deactivate) or Phase III (testing).
+Phase I fully complete (all PRs and all manual testing / completion checklist done). Next: Phase II (search, pagination, active jobs, deactivate) or Phase III (testing).
 
 ## Recent Changes
 
+- Phase I manual testing and completion checklist marked complete in phase_1_tasks.md (Job endpoints, concurrency, cascade delete, validation, error format, Phase I Completion Checklist).
 - PR #12 completed: JobController (@RestController, /api/jobs); GET all (List<JobDTO>), GET /{id} (JobDetailDTO), POST (201 + JobDTO), PATCH /{id}, DELETE /{id} (204).
 - PR #11 completed: CompanyController (@RestController, /api/companies); GET all, GET /{id}, POST (201), PATCH /{id}, DELETE /{id} (204).
 - PR #10 completed: JobService; getAllJobs (findAllWithCompany JOIN FETCH), getJobById (JobDetailDTO), createJob, updateJob, deleteJob; company validation; JobRepository.findAllWithCompany().

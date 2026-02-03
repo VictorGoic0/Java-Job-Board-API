@@ -24,7 +24,7 @@
 
 ## Current Status
 
-Phase I complete (PR #1–#12). Full CRUD for companies and jobs; validation; global exception handling; optimistic locking. Ready for Phase II or Phase III.
+Phase I fully complete: all 12 PRs done; all manual testing (Setup, Company endpoints, Job endpoints, Concurrency, Cascade delete, Validation, Error format) and Phase I Completion Checklist marked complete in phase_1_tasks.md. Full CRUD for companies and jobs; validation; global exception handling; optimistic locking; idempotent DELETE (204). Ready for Phase II or Phase III.
 
 ## Known Issues
 

@@ -13,7 +13,7 @@ Base URL: `http://localhost:8080`
 ```bash
 curl -s -X POST http://localhost:8080/api/companies \
   -H "Content-Type: application/json" \
-  -d '{"name":"Tech Corp","description":"We build stuff","website":"https://techcorp.com","location":"New York, NY"}'
+  -d '{"name":"Tech Corp 2099","description":"We build stuff!!!!","website":"https://techcorp.com","location":"New York, NY"}'
 ```
 
 Expect: **201** + JSON body with `id`, `name`, `createdAt`, `updatedAt`, etc.
@@ -61,7 +61,7 @@ Expect: **204** no content.
 ```bash
 curl -s -X POST http://localhost:8080/api/jobs \
   -H "Content-Type: application/json" \
-  -d '{"title":"Senior Java Dev","description":"Build APIs","companyId":1,"location":"New York, NY","jobType":"FULL_TIME","experienceLevel":"SENIOR","remoteOption":"HYBRID"}'
+  -d '{"title":"Senior Java Dev","description":"Build APIs","companyId":4,"location":"New York, NY","jobType":"FULL_TIME","experienceLevel":"SENIOR","remoteOption":"HYBRID"}'
 ```
 
 Expect: **201** + JSON body with job + embedded `company` (id, name, location).
@@ -150,7 +150,15 @@ Second call: **404**.
 
 ---
 
-## 4. Quick checklist
+## 4. Concurrency / optimistic locking (409)
+
+**What it is:** Each `Job` (and `Company`) has a `@Version` field. On update, Hibernate runs `UPDATE job SET ... version = N+1 WHERE id = ? AND version = N`. If another request already updated the row (version is now N+1), this update affects 0 rows and Spring throws `ObjectOptimisticLockingFailureException` → our handler returns **409 Conflict** with a message like “The resource was modified by another user. Please refresh and try again.”
+
+**How to test:** Use two terminals. Both PATCH the same job at nearly the same time so both load the same version; the first save wins (200), the second gets 409. Run the two curls as close together as possible (e.g. run the first, then immediately run the second in another terminal). With luck the second request loads before the first commits and you'll see 409. Alternatively, add a temporary `Thread.sleep(4000)` in `JobService.updateJob` before `repository.save(job)` to make the first request hang so you have time to start the second.
+
+---
+
+## 5. Quick checklist
 
 | Check              | Endpoint / action                                                  |
 | ------------------ | ------------------------------------------------------------------ |
