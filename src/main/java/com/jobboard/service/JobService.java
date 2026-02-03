@@ -11,7 +11,8 @@ import com.jobboard.model.entity.Job;
 import com.jobboard.repository.CompanyRepository;
 import com.jobboard.repository.JobRepository;
 import com.jobboard.util.JobMapper;
-import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -30,10 +31,8 @@ public class JobService {
     }
 
     @Transactional(readOnly = true)
-    public List<JobDTO> getAllJobs() {
-        return jobRepository.findAllWithCompany().stream()
-                .map(jobMapper::toDTO)
-                .toList();
+    public Page<JobDTO> getAllJobs(Pageable pageable) {
+        return jobRepository.findAllWithCompany(pageable).map(jobMapper::toDTO);
     }
 
     @Transactional(readOnly = true)

@@ -7,7 +7,8 @@ import com.jobboard.model.dto.CompanyUpdateDTO;
 import com.jobboard.model.entity.Company;
 import com.jobboard.repository.CompanyRepository;
 import com.jobboard.util.CompanyMapper;
-import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -24,10 +25,8 @@ public class CompanyService {
     }
 
     @Transactional(readOnly = true)
-    public List<CompanyDTO> getAllCompanies() {
-        return companyRepository.findAll().stream()
-                .map(companyMapper::toDTO)
-                .toList();
+    public Page<CompanyDTO> getAllCompanies(Pageable pageable) {
+        return companyRepository.findAll(pageable).map(companyMapper::toDTO);
     }
 
     @Transactional(readOnly = true)

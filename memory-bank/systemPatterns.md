@@ -13,6 +13,7 @@
 - **PATCH semantics**: Update DTOs have optional fields; only non-null fields are applied (partial update).
 - **Soft delete**: Deactivate job sets `is_active = false`; no row delete for that path.
 - **N+1 avoidance**: List endpoints use join fetch (e.g. job + company) where needed; repositories expose appropriate queries.
+- **Pagination**: List endpoints (GET /api/jobs, GET /api/companies) return `Page<T>` with query params `page` (default 0), `size` (default 20, max 100), `sort` (e.g. "postedDate,desc"). Controllers use `parseSort(String)` with a whitelist of allowed sort field names to prevent injection; invalid fields are skipped.
 
 ## Component Relationships
 

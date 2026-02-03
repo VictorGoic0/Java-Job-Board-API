@@ -14,17 +14,18 @@
 - **PR #10 complete**: JobService (getAllJobs via findAllWithCompany JOIN FETCH, getJobById → JobDetailDTO, createJob, updateJob, deleteJob); company validation on create/update; JobRepository.findAllWithCompany().
 - **PR #11 complete**: CompanyController (GET /api/companies, GET /{id}, POST, PATCH /{id}, DELETE /{id}); 200/201/204.
 - **PR #12 complete**: JobController (GET /api/jobs, GET /{id} JobDetailDTO, POST, PATCH /{id}, DELETE /{id}); 200/201/204.
+- **PR #13 complete**: Pagination on GET /api/jobs and GET /api/companies (page, size, sort; Page response; @Min/@Max validation; sort field whitelist); JobRepository.findAllWithCompany(Pageable); parseSort in both controllers.
 - PRD and phase task files; Memory Bank; Cursor rule for PR completion and Vader quote sign-off.
 
 ## What's Left to Build
 
-- **Phase II**: Search/filter, pagination, active jobs, deactivate.
+- **Phase II (remaining)**: PR #14 Active Jobs repo query → PR #15 Search repo query → active jobs endpoint → search endpoint → deactivate endpoint.
 - **Phase III**: Unit, repository, controller tests.
 - **Phase IV**: Security (JWT), User, file upload, Application entity, scheduled expiration.
 
 ## Current Status
 
-Phase I fully complete: all 12 PRs done; all manual testing (Setup, Company endpoints, Job endpoints, Concurrency, Cascade delete, Validation, Error format) and Phase I Completion Checklist marked complete in phase_1_tasks.md. Full CRUD for companies and jobs; validation; global exception handling; optimistic locking; idempotent DELETE (204). Ready for Phase II or Phase III.
+Phase II in progress: PR #13 done (pagination on jobs and companies). Phase I fully complete. Next: PR #14 (Active Jobs Repository Query).
 
 ## Known Issues
 
