@@ -52,8 +52,6 @@ public class CompanyService {
     }
 
     public void deleteCompany(Long id) {
-        Company company = companyRepository.findById(id)
-                .orElseThrow(() -> new CompanyNotFoundException(id));
-        companyRepository.delete(company);
+        companyRepository.findById(id).ifPresent(companyRepository::delete);
     }
 }

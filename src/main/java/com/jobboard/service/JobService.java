@@ -65,8 +65,6 @@ public class JobService {
     }
 
     public void deleteJob(Long id) {
-        Job job = jobRepository.findById(id)
-                .orElseThrow(() -> new JobNotFoundException(id));
-        jobRepository.delete(job);
+        jobRepository.findById(id).ifPresent(jobRepository::delete);
     }
 }

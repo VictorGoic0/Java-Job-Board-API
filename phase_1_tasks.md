@@ -703,40 +703,40 @@
 
 ### Setup
 
-- [ ] PostgreSQL container is running
-- [ ] Application starts without errors
-- [ ] Database tables created (company, job)
+- [x] PostgreSQL container is running
+- [x] Application starts without errors
+- [x] Database tables created (company, job)
 
 ### Company Endpoints
 
 #### Create Company (POST /api/companies)
 
-- [ ] Create company with all fields - returns 201
-- [ ] Create company without name - returns 400 with validation error
-- [ ] Create company with invalid website URL - returns 400
+- [x] Create company with all fields - returns 201
+- [x] Create company without name - returns 400 with validation error
+- [x] Create company with invalid website URL - returns 400
 
 #### Get All Companies (GET /api/companies)
 
-- [ ] Returns empty list initially - returns 200
-- [ ] After creating companies, returns full list - returns 200
+- [x] Returns empty list initially - returns 200
+- [x] After creating companies, returns full list - returns 200
 
 #### Get Company By ID (GET /api/companies/{id})
 
-- [ ] Get existing company - returns 200 with company data
-- [ ] Get non-existent company - returns 404 with error message
+- [x] Get existing company - returns 200 with company data
+- [x] Get non-existent company - returns 404 with error message
 
 #### Update Company (PATCH /api/companies/{id})
 
-- [ ] Update single field (e.g., name only) - returns 200
-- [ ] Update multiple fields - returns 200
-- [ ] Verify unchanged fields remain the same
-- [ ] Update non-existent company - returns 404
+- [x] Update single field (e.g., name only) - returns 200
+- [x] Update multiple fields - returns 200
+- [x] Verify unchanged fields remain the same
+- [x] Update non-existent company - returns 404
 
 #### Delete Company (DELETE /api/companies/{id})
 
-- [ ] Delete existing company - returns 204
-- [ ] Verify company no longer exists - GET returns 404
-- [ ] Delete non-existent company - returns 404
+- [x] Delete existing company - returns 204
+- [x] Verify company no longer exists - GET returns 404
+- [x] Delete non-existent company - returns 204 (idempotent)
 
 ### Job Endpoints
 

@@ -52,7 +52,7 @@ public class CompanyMapper {
         if (entity == null || dto == null) {
             return;
         }
-        if (dto.getName() != null) {
+        if (dto.getName() != null && !dto.getName().isBlank()) {
             entity.setName(dto.getName());
         }
         if (dto.getDescription() != null) {
@@ -61,7 +61,7 @@ public class CompanyMapper {
         if (dto.getWebsite() != null) {
             entity.setWebsite(dto.getWebsite());
         }
-        if (dto.getLocation() != null) {
+        if (dto.getLocation() != null && !dto.getLocation().isBlank()) {
             entity.setLocation(dto.getLocation());
         }
     }
