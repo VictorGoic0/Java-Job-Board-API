@@ -14,26 +14,23 @@ Use this file to resume work in a new tab. It summarizes recent work and where t
 
 ## Current State (Where We Left Off)
 
-**Phase II is in progress.** PR #13 (Pagination) is **complete**. Next up is **PR #14: Add Active Jobs Repository Query**, then PR #15 (Search/Filter repo query), then active jobs endpoint, search endpoint, deactivate endpoint.
+**Phase II is in progress.** PR #14 (Active Jobs Repository Query) is **complete**. Next up is **PR #15: Add Search/Filter Repository Query**, then search endpoint, deactivate endpoint.
 
-### Recently Completed: PR #13 (Pagination)
+### Recently Completed: PR #14 (Active Jobs Repository Query)
 
-- **JobService**: `getAllJobs(Pageable pageable)` → `Page<JobDTO>`; uses `JobRepository.findAllWithCompany(Pageable)` (JOIN FETCH + countQuery).
-- **JobController**: GET /api/jobs accepts `page` (default 0, @Min(0)), `size` (default 20, @Min(1) @Max(100)), `sort` (default "postedDate,desc"). Returns `ResponseEntity<Page<JobDTO>>`. Private `parseSort(String sort)` with whitelist `ALLOWED_JOB_SORT_FIELDS` (id, title, location, salaryMin, salaryMax, jobType, experienceLevel, remoteOption, postedDate, isActive, createdAt, updatedAt).
-- **CompanyService**: `getAllCompanies(Pageable pageable)` → `Page<CompanyDTO>`; uses `companyRepository.findAll(pageable).map(companyMapper::toDTO)`.
-- **CompanyController**: GET /api/companies same pagination params; default sort "name,asc". `parseSort` with `ALLOWED_COMPANY_SORT_FIELDS` (id, name, description, website, location, createdAt, updatedAt).
-- Manual pagination tests (task 7) marked complete in phase_2_tasks.md.
+- **JobRepository**: `Page<Job> findActiveJobs(Pageable pageable)` with `@Query` JPQL: `j.isActive = true AND (j.expiryDate IS NULL OR j.expiryDate > CURRENT_TIMESTAMP)`, JOIN FETCH company, countQuery for pagination.
+- **JobService**: `getActiveJobs(Pageable pageable)` → `Page<JobDTO>`; uses `jobRepository.findActiveJobs(pageable)`.
+- **JobController**: GET /api/jobs/active with same pagination params as GET /api/jobs (page, size, sort). Returns only active, non-expired jobs.
+- PR #14 tasks marked complete in phase_2_tasks.md.
 
-### Next: PR #14 (Active Jobs Repository Query)
+### Next: PR #15 (Search/Filter Repository Query)
 
-- Add to **JobRepository**: `Page<Job> findActiveJobs(Pageable pageable)` with `@Query` JPQL: `j.isActive = true AND (j.expiryDate IS NULL OR j.expiryDate > CURRENT_TIMESTAMP)`.
-- Include a **countQuery** for pagination.
-- See `phase_2_tasks.md` section "PR #14: Add Active Jobs Repository Query" for full checklist.
+- Add **searchJobs** repository method (keyword, location, companyId, enums, salary range, isActive; paginated).
+- See `phase_2_tasks.md` section "PR #15: Add Search/Filter Repository Query" for full checklist.
 
 ### After That
 
-- **PR #15**: Add searchJobs repository method (keyword, location, companyId, enums, salary range, isActive; paginated).
-- Then: service/controller for active jobs, search endpoint, deactivate endpoint.
+- Search endpoint (GET /api/jobs/search), deactivate endpoint (POST /api/jobs/{id}/deactivate).
 
 ---
 
@@ -74,4 +71,4 @@ Use this file to resume work in a new tab. It summarizes recent work and where t
 
 ---
 
-_Last updated: After completing PR #13 (Pagination). Next: PR #14 (Active Jobs Repository Query)._
+_Last updated: After completing PR #14 (Active Jobs Repository Query). Next: PR #15 (Search/Filter Repository Query)._

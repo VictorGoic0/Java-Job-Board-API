@@ -81,24 +81,24 @@
 
 ### Tasks
 
-- [ ] 1. Add findActiveJobs query to JobRepository
+- [x] 1. Add findActiveJobs query to JobRepository
 
-  - [ ] Open `repository/JobRepository.java`
-  - [ ] Add method with `@Query` annotation
-  - [ ] Write JPQL: `"SELECT j FROM Job j WHERE j.isActive = true AND (j.expiryDate IS NULL OR j.expiryDate > CURRENT_TIMESTAMP)"`
-  - [ ] Method signature: `Page<Job> findActiveJobs(Pageable pageable)`
+  - [x] Open `repository/JobRepository.java`
+  - [x] Add method with `@Query` annotation
+  - [x] Write JPQL: `"SELECT j FROM Job j WHERE j.isActive = true AND (j.expiryDate IS NULL OR j.expiryDate > CURRENT_TIMESTAMP)"`
+  - [x] Method signature: `Page<Job> findActiveJobs(Pageable pageable)`
 
-- [ ] 2. Add test data setup (manual verification)
+- [x] 2. Add test data setup (manual verification)
 
-  - [ ] Create jobs with isActive = true, expiryDate = null
-  - [ ] Create jobs with isActive = true, expiryDate = future
-  - [ ] Create jobs with isActive = false
-  - [ ] Create jobs with isActive = true, expiryDate = past
+  - [x] Create jobs with isActive = true, expiryDate = null
+  - [x] Create jobs with isActive = true, expiryDate = future
+  - [x] Create jobs with isActive = false
+  - [x] Create jobs with isActive = true, expiryDate = past
 
-- [ ] 3. Test query in application
-  - [ ] Add temporary test endpoint or use database client
-  - [ ] Verify only active, non-expired jobs returned
-  - [ ] Verify query uses proper SQL (check logs)
+- [x] 3. Test query in application
+  - [x] Add temporary test endpoint or use database client
+  - [x] Verify only active, non-expired jobs returned
+  - [x] Verify query uses proper SQL (check logs)
 
 **Acceptance Criteria**:
 

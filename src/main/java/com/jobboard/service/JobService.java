@@ -36,6 +36,11 @@ public class JobService {
     }
 
     @Transactional(readOnly = true)
+    public Page<JobDTO> getActiveJobs(Pageable pageable) {
+        return jobRepository.findActiveJobs(pageable).map(jobMapper::toDTO);
+    }
+
+    @Transactional(readOnly = true)
     public JobDetailDTO getJobById(Long id) {
         Job job = jobRepository.findById(id)
                 .orElseThrow(() -> new JobNotFoundException(id));

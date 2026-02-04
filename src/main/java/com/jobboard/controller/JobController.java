@@ -52,6 +52,15 @@ public class JobController {
         return ResponseEntity.ok(jobService.getAllJobs(pageable));
     }
 
+    @GetMapping("/active")
+    public ResponseEntity<Page<JobDTO>> getActiveJobs(
+            @RequestParam(defaultValue = "0") @Min(0) int page,
+            @RequestParam(defaultValue = "20") @Min(1) @Max(100) int size,
+            @RequestParam(defaultValue = "postedDate,desc") String sort) {
+        Pageable pageable = PageRequest.of(page, size, parseSort(sort));
+        return ResponseEntity.ok(jobService.getActiveJobs(pageable));
+    }
+
     private Sort parseSort(String sort) {
         if (sort == null || sort.isBlank()) {
             return Sort.by(Sort.Direction.DESC, "postedDate");

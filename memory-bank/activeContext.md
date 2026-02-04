@@ -2,19 +2,18 @@
 
 ## Current Focus
 
-PR #13 complete (pagination on GET /api/jobs and GET /api/companies). Next: PR #14 (Active Jobs Repository Query).
+PR #14 complete (Active Jobs Repository Query). Next: PR #15 (Search/Filter Repository Query).
 
 ## Recent Changes
 
-- PR #13 completed: Pagination on existing list endpoints. JobService.getAllJobs(Pageable) → Page<JobDTO>; JobRepository.findAllWithCompany(Pageable); JobController.getAllJobs(page, size, sort) with @Min(0) page, @Min(1) @Max(100) size, parseSort with whitelist (ALLOWED_JOB_SORT_FIELDS). CompanyService.getAllCompanies(Pageable) → Page<CompanyDTO>; CompanyController.getAllCompanies(page, size, sort) with same validation and parseSort (ALLOWED_COMPANY_SORT_FIELDS). Manual pagination tests marked complete.
-- Phase I fully complete (all 12 PRs and manual testing / completion checklist done).
-- PR #12 completed: JobController; PR #11 CompanyController; PR #10 JobService; PR #9 CompanyService.
+- PR #14 completed: JobRepository.findActiveJobs(Pageable) with @Query JPQL (isActive = true AND (expiryDate IS NULL OR expiryDate > CURRENT_TIMESTAMP)), countQuery for pagination, JOIN FETCH company. JobService.getActiveJobs(Pageable); JobController GET /api/jobs/active with same pagination params (page, size, sort). Manual verification tasks marked complete in phase_2_tasks.md.
+- PR #13 completed: Pagination on GET /api/jobs and GET /api/companies.
+- Phase I fully complete (all 12 PRs).
 
 ## Next Steps
 
-- PR #14: Add findActiveJobs(Pageable) to JobRepository (JPQL: isActive = true AND (expiryDate IS NULL OR expiryDate > CURRENT_TIMESTAMP)); manual verification.
 - PR #15: Add searchJobs repository query (keyword, location, companyId, enums, salary, isActive).
-- Then: active jobs endpoint, search endpoint, deactivate endpoint.
+- Then: search endpoint, deactivate endpoint (active jobs endpoint delivered via GET /api/jobs/active in PR #14).
 
 ## Active Decisions
 

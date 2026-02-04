@@ -15,17 +15,18 @@
 - **PR #11 complete**: CompanyController (GET /api/companies, GET /{id}, POST, PATCH /{id}, DELETE /{id}); 200/201/204.
 - **PR #12 complete**: JobController (GET /api/jobs, GET /{id} JobDetailDTO, POST, PATCH /{id}, DELETE /{id}); 200/201/204.
 - **PR #13 complete**: Pagination on GET /api/jobs and GET /api/companies (page, size, sort; Page response; @Min/@Max validation; sort field whitelist); JobRepository.findAllWithCompany(Pageable); parseSort in both controllers.
+- **PR #14 complete**: JobRepository.findActiveJobs(Pageable) with JPQL and countQuery; JobService.getActiveJobs; GET /api/jobs/active (paginated, same params as GET /api/jobs).
 - PRD and phase task files; Memory Bank; Cursor rule for PR completion and Vader quote sign-off.
 
 ## What's Left to Build
 
-- **Phase II (remaining)**: PR #14 Active Jobs repo query → PR #15 Search repo query → active jobs endpoint → search endpoint → deactivate endpoint.
+- **Phase II (remaining)**: PR #15 Search repo query → search endpoint → deactivate endpoint.
 - **Phase III**: Unit, repository, controller tests.
 - **Phase IV**: Security (JWT), User, file upload, Application entity, scheduled expiration.
 
 ## Current Status
 
-Phase II in progress: PR #13 done (pagination on jobs and companies). Phase I fully complete. Next: PR #14 (Active Jobs Repository Query).
+Phase II in progress: PR #14 done (Active Jobs repo query + GET /api/jobs/active). Next: PR #15 (Search/Filter Repository Query).
 
 ## Known Issues
 

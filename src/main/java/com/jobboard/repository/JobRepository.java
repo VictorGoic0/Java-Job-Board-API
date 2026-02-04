@@ -16,4 +16,9 @@ public interface JobRepository extends JpaRepository<Job, Long> {
 
     @Query(value = "SELECT j FROM Job j JOIN FETCH j.company", countQuery = "SELECT COUNT(j) FROM Job j")
     Page<Job> findAllWithCompany(Pageable pageable);
+
+    @Query(
+            value = "SELECT j FROM Job j JOIN FETCH j.company WHERE j.isActive = true AND (j.expiryDate IS NULL OR j.expiryDate > CURRENT_TIMESTAMP)",
+            countQuery = "SELECT COUNT(j) FROM Job j WHERE j.isActive = true AND (j.expiryDate IS NULL OR j.expiryDate > CURRENT_TIMESTAMP)")
+    Page<Job> findActiveJobs(Pageable pageable);
 }

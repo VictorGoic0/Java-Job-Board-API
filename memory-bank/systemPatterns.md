@@ -19,7 +19,7 @@
 
 - **Controller**: Receives HTTP, validates input via `@Valid`, delegates to Service, returns ResponseEntity and DTOs.
 - **Service**: `@Transactional`; business rules, entity ↔ DTO mapping, calls Repository; throws domain exceptions (e.g. JobNotFoundException, CompanyNotFoundException, OptimisticLockException).
-- **Repository**: Spring Data JPA `JpaRepository`; custom methods for search, active jobs, findByCompanyId, etc.
+- **Repository**: Spring Data JPA `JpaRepository`; custom methods for search, findActiveJobs(Pageable), findByCompanyId, etc.
 - **GlobalExceptionHandler**: `@RestControllerAdvice`; maps exceptions to ErrorResponse / ValidationErrorResponse and HTTP status.
 
 ## Design Conventions
